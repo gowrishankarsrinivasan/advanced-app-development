@@ -1,8 +1,24 @@
+// import Login from "./Pages/login/login";
+// function App() {
+//   return (
+//     <>
+//       <div className="App">
+//         <Login />
+//       </div>
+//     </>
+//   );
+// }
 
-function App() {
+// export default App;
+
+
+import React from 'react';
+import Signup from './Pages/login/signUp';
+
+const App = () => {
   return (
-    <div className="App">
-      <p>Hello there...</p>
+    <div>
+      <Signup/>
     </div>
   );
 }
