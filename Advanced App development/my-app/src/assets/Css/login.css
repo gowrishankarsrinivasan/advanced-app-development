@@ -4,114 +4,180 @@
     display: grid;
     place-items: center;
     overflow: hidden;
-}
-
-.loginPage-container {
+    
+  }
+  
+  .loginPage-container {
     width: 60%;
-    background-color: antiquewhite;
     display: flex;
     flex-direction: row;
-}
-
-.login-left {
-    background-color: black;
+    box-shadow: 4px 4px 4px 2px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease;
+  }
+  
+  .loginPage-container:hover {
+    box-shadow: 8px 8px 8px 4px rgba(0, 0, 0, 0.2); /* New box-shadow on hover */
+  }
+  
+  
+  .login-left {
     height: 600px;
     width: 50%;
-    position: relative; 
-}
-
-.video-bg {
-    z-index: -1;
+    position: relative;
+  }
+  
+  .login-video-container {
+    position: relative;
+    height: 100%;
+  }
+  
+  .login-left-content {
+    z-index: 1;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    height: 100%;
     width: 100%;
-    height: 600px;
-    object-fit: cover;
-    object-position: center;
-}
-
-.login-left-container-content {
-    height: 600px;
-    width: 100%;
-    position: absolute; 
-    z-index: 2; 
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: white;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: space-around;
-}
-
-
-.login-left-container-content-inner-bottom{
+    justify-content: space-evenly;
+  }
+  .login-left-content-span{
+    text-align: start;
     position: relative;
-    top: 80px;
-    height: 50px;
-    background-color: aliceblue;
+    top: 30px;
+    font-size: 50px;
+    line-height: 1.8;
+    font-weight: bold;
+  }
+  .login-actions {
+    position: relative;
+    top: 40px;
+    background-color: aqua;
     width: 90%;
     display: flex;
     align-items: center;
     justify-content: space-evenly;
-    border-radius:10px ;
-    background: rgba(255, 255,255,0.248);
-}
-.login-container-signup-btn{
-    padding: 10px 25px;
-    border-radius: 20px;
-    border: none;
-}
-.login-left-container-content-inner-top span{
-    position: relative;
-    top: 90px;
-    color: white;
-    font-size: 30px;
-    font-weight: 400;
-    word-spacing: 5px;
-    line-height: 1.5;
-}
+    margin-top: 20px;
+    background-color: rgba(255,255,255,0.258);
+    padding: 10px;
+    border-radius: 15px;
+  }
+  
+
+  .video-bg {
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
+  
 
 
 
-/* right container */
-
-
-.login-right {
-    /* background-color: black; */
+  /* right side*/
+  
+  
+  .login-right {
     height: 600px;
     width: 50%;
     display: flex;
     align-items: center;
     flex-direction: column;
     justify-content: space-evenly;
-}
+  }
+  
+  .login-header {
+    font-size: 60px;
+    font-weight: bold;
+    position: relative;
+  }
+  
+  .loginForm-container {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .login-inputs{
 
-
-
-.login-right-footer{
+    padding: 20px;
+  }
+  .login-inputs label {
+    font-weight: bold;
+  }
+  
+  .input-container {
+    display: flex;
+    align-items: center;
+  }
+  
+  .login-footer {
+    width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
-}
+    justify-content: center;
+  }
+  
+  .login-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 20px;
+    border-radius: 20px;
+    border: none;
+  }
+  
+  .login-footer-links {
+    margin-top: 10px;
+  }
+  
+  .forgot-password {
+    color: blue;
+  }
+  
+  .forgot-password a {
+    color: blue;
+    text-decoration: none;
+  }
+  
 
-.login-right-header{
-    font-size: 40px;
+  .loginForm-container {
+    width: 100%;
+  }
+  
+  .loginForm-container form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .login-inputs {
+    margin-bottom: 20px;
+  }
+  
+  label {
     font-weight: bold;
-    position: relative;
-    bottom: 50px;
-}
-
-.login-inputs {
-    margin-bottom: 20px; /* Example margin bottom */
-}
-label {
-    font-weight: bold; /* Example font weight */
-}
-
-.login-input-container {
+  }
+  
+  .input-container {
     display: flex;
     align-items: center;
-    /* Add any additional styles for the input container */
-}
-.login-right-footer {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    /* Add any additional styles for the footer */
-}
+  }
+  
+  .input-container svg {
+    margin-right: 10px;
+  }
+  
+  input {
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+  }
+  

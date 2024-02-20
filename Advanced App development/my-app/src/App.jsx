@@ -1,26 +1,68 @@
+// import React from "react";
+// import Signup from "./Pages/login/signUp";
+// import { Navigate, Routes, Route } from "react-router-dom";
+// import LazyLayout from "./Components/LazyLayout";
 // import Login from "./Pages/login/login";
-// function App() {
+// const LazyLogin = lazy(() => {
+//   import("./Pages/login/login");
+// });
+// const LazyHome = lazy(() => {
+//   import("./Pages/User/About");
+// });
+// const LazyDashBoard = lazy(() => {
+//   import("./Pages/Admin/DashBoard");
+// });
+
+// const UserRoutes = () => {
 //   return (
-//     <>
-//       <div className="App">
-//         <Login />
-//       </div>
-//     </>
+//     <userLayout>
+//       <Routes>
+//         <Route path="/home" element={LazyHome} />
+//       </Routes>
+//     </userLayout>
 //   );
-// }
+// };
+// const AdminRoutes = () => {
+//   return (
+//     <Routes>
+//       <Route path="./dashboard" element={LazyDashBoard} />
+//       <Route path="./userInfo" element={LazyUserInfo} />
+//     </Routes>
+//   );
+// };
+// const App = () => {
+//   return (
+//     <Routes>
+//       <Route exact path="/" element={<Navigate to="/routeTo/login" />} />
+//       <Route
+//         exact
+//         path="/routeTo/login"
+//         element={<LazyLayout component={LazyLogin} />}
+//       />
+//       <Route exact path="/routeTo/user/*" element={LazyHome} />
+//       <Route exact path="/routeTo/user/*" element={UserRoutes} />
+//     </Routes>
+//   );
+// };
 
-// export default App;
+
+import React, { lazy } from "react";
+import { Navigate, Routes, Route } from "react-router-dom";
 
 
-import React from 'react';
-import Signup from './Pages/login/signUp';
+const LazyLogin = lazy(() => import("./Pages/login/login"));
+const LazysignUp = lazy(() => import("./Pages/login/signUp"));
 
 const App = () => {
   return (
-    <div>
-      <Signup/>
+    <div className="App">
+      <Routes>
+        <Route exact path="/" element={<Navigate to="/routeTo/signUp" />} />
+        <Route exact path="/routeTo/login" element={<LazyLogin />} />
+        <Route exact path="/routeTo/signUp" element={<LazysignUp />} />
+      </Routes>
     </div>
   );
-}
+};
 
 export default App;
