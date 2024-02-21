@@ -1,31 +1,30 @@
 import React from "react";
 import "/src/assets/Css/nav.css";
+import img from "/src/assets/Images/Logo.png";
 const Navbar = () => {
   return (
-    <div className="navbar-container">
       <nav className="navbar">
         <div className="navbar-left">
-          <img src="/path/to/logo.png" alt="Logo" className="logo" />
+          <p>Certify<span>Ease</span></p>
         </div>
         <ul className="navbar-center">
           <li>
-            <a href="#">Item 1</a>
+            <a href="#">Home</a>
           </li>
           <li>
-            <a href="#">Item 2</a>
+            <a href="#">about</a>
           </li>
           <li>
-            <a href="#">Item 3</a>
+            <a href="#">Services</a>
           </li>
           <li>
-            <a href="#">Item 4</a>
+            <a href="#">Contact</a>
           </li>
         </ul>
         <div className="navbar-right">
           <button className="logout-btn">Logout</button>
         </div>
       </nav>
-    </div>
   );
 };
 

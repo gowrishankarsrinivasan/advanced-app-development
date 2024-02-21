@@ -1,18 +1,11 @@
-.navbar-container {
-  height: 12vh;
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=Protest+Revolution&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
 .navbar {
   height: 10vh;
-  width: 95%;
-  border-radius: 16px;
+  width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #333;
+  background-color:black;
   color: #fff;
   padding: 10px 20px;
   padding: 10px;
@@ -20,24 +13,32 @@
 
 .navbar-left,
 .navbar-right {
+  font-family: "Rubik", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: normal;
   display: flex;
   align-items: center;
+  justify-content: center;
 }
-
-.logo {
-    margin-left: 20px;
-  width: 50px; 
+.navbar-left p{
+  position: relative;
+  margin-left: 25px;
+  font-size: 24px;
+}
+.navbar-left span{
+  color:orangered;
 }
 
 .navbar-center {
   list-style: none;
   display: flex;
   align-items: center;
-  justify-content: space-around;
-  border-radius: 24px;
-  gap: 50px; 
+  justify-content: space-evenly;
+  border-radius: 16px;
+  gap: 30px; 
   width: 50%;
-  background-color: #007bff;
+  /* background-color: rgb(44, 40, 40); */
   height: 100%;
 }
 
@@ -48,10 +49,11 @@
 .navbar-center li a {
   color: #fff;
   text-decoration: none;
-  padding: 8px 16px;
+  padding: 12px 24px;
+  transition: background-color 1 ease-in-out;
 }
 .navbar-center li a:hover {
-    background-color: #8cacce;
+    background-color: orangered;
     color: #fff;
     border: none;
     border-radius: 5px;
@@ -60,11 +62,11 @@
 }
 
 .logout-btn {
-  background-color: #007bff;
+  background-color: orangered;
   color: #fff;
   border: none;
   border-radius: 5px;
-  padding: 8px 16px;
+  padding: 12px 28px;
   cursor: pointer;
   margin-right: 20px;
 }

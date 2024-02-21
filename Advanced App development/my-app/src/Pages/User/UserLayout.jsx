@@ -3,7 +3,7 @@ import propTypes from "prop-types";
 import Navbar from "./Navbar";
 const UserLayout = ({children}) => {
   return (
-    <div className="user_container" style={{background:"gray"}}>
+    <div className="user_container">
       <header>
         <Navbar />
       </header>
