@@ -14,7 +14,7 @@ const Signup = () => {
   return (
     <div className="signup-container">
       <div className="signup-form-container">
-        <video className="video-bg" autoPlay loop muted>
+        <video className="video-bg" style={{ filter: "blur(0px)" }} autoPlay loop muted>
           <source src={video} type="video/mp4" />
         </video>
         <form onSubmit={handleSubmit}>
@@ -70,7 +70,7 @@ const Signup = () => {
                 setPassword(e.target.value);
               }}
             />
-            <button className="btn">
+            <button className="signup-btn">
               <strong>Submit</strong>
             </button>
             <strong>Already have an account?Login</strong>

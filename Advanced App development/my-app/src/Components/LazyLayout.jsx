@@ -1,5 +1,5 @@
 import { Suspense } from "react"
-import PropTypes from "prop-types";
+import propTypes from "prop-types";
 const LazyLayout=({component:Component,...rest})=>{
     return(
         <Suspense fallback="Loading...">
@@ -9,7 +9,7 @@ const LazyLayout=({component:Component,...rest})=>{
 }
 
 LazyLayout.propTypes ={
-    component: PropTypes.elementType.isRequired
+    component: propTypes.elementType.isRequired
 }
 
 export default LazyLayout;

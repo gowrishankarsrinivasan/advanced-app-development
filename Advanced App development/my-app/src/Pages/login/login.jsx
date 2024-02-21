@@ -5,13 +5,12 @@ import { BsFillShieldLockFill } from "react-icons/bs";
 import { AiOutlineSwapRight } from "react-icons/ai";
 import video from "/src/assets/Media/video.mp4";
 import { useNavigate } from "react-router-dom";
-import Signup from "./signUp";
 
 const Login = () => {
   const navigate = useNavigate();
-  const ClickSignUp=()=>{
+  const ClickSignUp = () => {
     navigate("/routeTo/signUp");
-  }
+  };
   return (
     <div className="loginPage">
       <div className="loginPage-container">
@@ -19,13 +18,15 @@ const Login = () => {
           <div className="login-video-container">
             <div className="login-left-content">
               <span className="login-left-content-span">
-                Welcome
-                <br /> Some descriptive
-                <br /> text goes here...
+                Hello
+                <br /> Create your
+                <br /> account here...
               </span>
               <div className="login-actions">
                 <span>Don't you have an account?</span>
-                <button className="signup-btn" onClick={ClickSignUp}>Sign Up</button>
+                <button className="loginpage-btn" onClick={ClickSignUp}>
+                  Sign Up
+                </button>
               </div>
             </div>
             <video className="video-bg" autoPlay loop muted>
@@ -36,14 +37,16 @@ const Login = () => {
 
         <div className="login-right">
           <div className="login-header">
-            <header>Welcome back</header>
+            <header>Welcome back!</header>
           </div>
           <div className="loginForm-container">
             <form>
               <div className="login-inputs">
-                <label htmlFor="username">Username</label>
+                <label htmlFor="username" className="top-label">
+                  Username
+                </label>
                 <div className="input-container">
-                  <FaUserShield />
+                  <FaUserShield className="react-icon" />
                   <input
                     type="text"
                     id="username"
@@ -53,9 +56,11 @@ const Login = () => {
               </div>
 
               <div className="login-inputs">
-                <label htmlFor="password">Password</label>
+                <label htmlFor="password" className="bottom-label">
+                  Password
+                </label>
                 <div className="input-container">
-                  <BsFillShieldLockFill />
+                  <BsFillShieldLockFill className="react-icon" />
                   <input
                     type="password"
                     id="password"
@@ -66,15 +71,14 @@ const Login = () => {
             </form>
           </div>
           <div className="login-footer">
-            <button type="submit" className="login-btn" onClick={ClickSignUp}>
+            <button
+              type="submit"
+              className="loginpage-btn"
+              onClick={ClickSignUp}
+            >
               <span>Login</span>
-              <AiOutlineSwapRight />
+              <AiOutlineSwapRight className="login-icon" />
             </button>
-            <div className="login-footer-links">
-              <span className="forgot-password">
-                Forgot your Password?<a href="#">Click Here</a>
-              </span>
-            </div>
           </div>
         </div>
       </div>
