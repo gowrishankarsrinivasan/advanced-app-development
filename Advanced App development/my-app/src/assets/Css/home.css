@@ -2,11 +2,10 @@
 .home-container{
     height: 90vh;
     width: 100%;
-    /* background-image: url("D:\advanced-app-development\Advanced App development\my-app\src\assets\Images\pexels-martin-mariani-3801516.jpg"); */
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    background-color: black;
+    background-color: #253237;
     color: aliceblue;
     display: flex;
     flex-direction: column;
@@ -20,12 +19,14 @@
     font-optical-sizing: auto;
     font-weight:700;
     font-style: normal;
+    animation: slideInFromLeft 1.5s ease-out forwards;
   }
   .protest-revolution-regular {
     font-size: 40px;
     font-family: "Protest Revolution", sans-serif;
     font-weight: 400;
     font-style: normal;
+    animation: slideInFromLeft 1.5s ease-out forwards;
   }
 .home-button{
     padding: 16px 50px;
@@ -34,4 +35,18 @@
     color: white;
     font-size: 20px;
     font-weight: 600;
+    animation: slideInFromLeft 1.5s ease-out forwards;
+}
+
+
+
+@keyframes slideInFromLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-100%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
 }

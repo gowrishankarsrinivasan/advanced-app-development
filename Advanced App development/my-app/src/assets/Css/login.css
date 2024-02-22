@@ -1,154 +1,166 @@
-.loginPage {
-  min-height: 100vh;
-  width: 100%;
-  display: grid;
-  place-items: center;
-  overflow: hidden;
-}
-
-.loginPage-container {
-  width: 60%;
+/* login.css */
+.login-container {
   display: flex;
-  flex-direction: row;
-}
-
-.login-left {
-  height: 600px;
-  width: 50%;
-  position: relative;
-}
-
-.login-video-container {
-  position: relative;
-  height: 100%;
-}
-
-.login-left-content {
-  z-index: 1;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  height: 100%;
   width: 100%;
-  transform: translate(-50%, -50%);
-  text-align: center;
-  color: white;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-evenly;
-}
-.login-left-content-span {
-  text-align: start;
-  position: relative;
-  top: 30px;
-  font-size: 50px;
-  line-height: 1.8;
-  font-weight: bold;
-}
-.login-actions {
-  position: relative;
-  top: 40px;
-  background-color: aqua;
-  width: 90%;
-  display: flex;
-  align-items: center;
-  justify-content: space-evenly;
-  margin-top: 20px;
-  background-color: rgba(255, 255, 255, 0.258);
-  padding: 10px;
-  border-radius: 15px;
+  height: 100vh;
 }
 
-.video-bg {
-  z-index: -1;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center;
-}
-
-.loginpage-btn {
-  padding: 10px 20px;
-  border-radius: 10px;
-  border: none;
-}
-
-/* right side*/
-
-.login-right {
+.left-half {
   flex: 1;
   display: flex;
   flex-direction: column;
+  justify-content: center;
   align-items: center;
-  justify-content: space-around;
-
-  box-shadow: 4px 4px 4px 2px rgba(0, 0, 0, 0.1);
-  transition: box-shadow 0.3s ease, transform 0.3s ease-in-out;
 }
-.login-right:hover {
-  box-shadow: 8px 8px 8px 4px rgba(0, 0, 0, 0.2); /* New box-shadow on hover */
-  transform: translateX(12px);
+.left-half-header {
+  font-size: 80px;
+  color: orangered;
+}
+.left-half-content {
+  font-size: 24px;
+  color: black;
+}
+
+
+
+.right-half {
+ flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #ffffff;
+  background-color: #adb5bd;
 }
 
 .login-header {
-  /* margin-bottom: 20px; */
-}
-
-.login-header header {
   position: relative;
-  margin-top: 70px;
-  font-size: 44px;
+  bottom: 30px;
+  font-size: 25px;
+  text-align: center;
+  margin-bottom: 50px;
+  color: rgb(255, 255, 255);
 }
 
-.loginForm-container {
-  width: 100%;
-  max-width: 300px;
-}
-
-.login-inputs {
+.social-icons {
+  position: relative;
+  bottom: 40px;
   margin-bottom: 20px;
-}
-
-.input-container {
   display: flex;
   align-items: center;
+  justify-content: space-evenly;
+  height: 70px;
+}
+
+.react-icons {
+  font-size: 50px; /* Adjust the font size as needed */
+  margin: 0 10px; /* Add space between icons */
+  border-radius: 50%; /* Make the icon round */
+  padding: 14px; /* Add padding to increase clickable area */
+  transition: background-color 0.3s ease, color 0.3s ease; /* Add smooth transition for background color and text color */
+}
+
+.react-icons:hover {
+  background-color: #f0f0f0; /* Change background color on hover */
+}
+
+/* Specific styles for each icon */
+.react-icons:nth-child(1) {
+  /* Facebook icon */
+  color: #3b5998; /* Facebook blue */
+}
+
+.react-icons:nth-child(2) {
+  /* LinkedIn icon */
+  color: #0077b5; /* LinkedIn blue */
+}
+
+.react-icons:nth-child(3) {
+  /* Mail icon */
+  color: #ea4335; /* Gmail red */
+}
+
+.right-half-form-container {
+  width: 400px;
+  height: 300px;
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.login-form{
+
+}
+
+.input-field {
+  position: relative;
+  display: flex;
+  align-items: center;
+  background-color: #ccc;
+  margin-bottom: 50px;
+  width: 300px;
+  border-radius: 16px;
+
+  /* padding: 6px 6px; */
+}
+
+.material-icons {
+  font-size: 33px;
+}
+
+/* .input-field i {
+  position: absolute;
+  left: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #ccc;
+} */
+
+.input-field input {
+  background-color: #ccc;
+  border-radius: 16px;
+  /* padding-left: 35px; */
+  width: calc(100% - 35px);
   border: 1px solid #ccc;
-  border-radius: 5px;
-  padding: 5px;
+  /* border: none; */
+  padding: 14px;
+  transition: border-color 0.3s ease; /* Add smooth transition */
 }
 
-.input-container input {
-  flex: 1;
-  border: none;
+.input-field-inputs:focus {
   outline: none;
-  padding: 5px;
 }
 
-.top-label,
-.bottom-label {
-  display: block;
-  margin-bottom: 5px;
-}
-
-.react-icon {
-  margin-right: 10px;
-}
-
-.loginpage-btn {
-  background-color: #007bff;
-  color: #fff;
+.login-btn {
+  margin-left: 60px;
+  background-color: orangered;
+  color: white;
+  padding: 16px 70px;
   border: none;
-  border-radius: 5px;
-  padding: 10px 20px;
+  border-radius: 24px;
   cursor: pointer;
-  transition: background-color 0.3s ease;
+  transition: background-color 0.3s ease; /* Add smooth transition */
 }
 
-.loginpage-btn:hover {
-  background-color: #0056b3;
+.login-btn:hover {
+  background-color: #fa0808; /* Change background color on hover */
 }
 
-.login-icon {
-  margin-left: 5px;
+.forgot-password {
+  position: relative;
+  font-weight: bold;
+  bottom: 35px;
+  font-size: 16px;
+  text-align: center;
+}
+
+.forgot-password a {
+  text-decoration: none;
+  color: #ffffff;
+  transition: color 0.3s ease; /* Add smooth transition */
+}
+
+.forgot-password a:hover {
+  color: #f60000; /* Change color on hover */
 }

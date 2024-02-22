@@ -1,14 +1,17 @@
 import React from "react";
 import propTypes from "prop-types";
 import Navbar from "./Navbar";
-const UserLayout = ({children}) => {
+import Footer from "./footer";
+const UserLayout = ({ children }) => {
   return (
     <div className="user_container">
-      <header>
+      <header style={{ position: "sticky", top: "0", zIndex: "1" }}>
         <Navbar />
       </header>
       <main>{children}</main>
-      <footer></footer>
+      <footer>
+        <Footer />
+      </footer>
     </div>
   );
 };

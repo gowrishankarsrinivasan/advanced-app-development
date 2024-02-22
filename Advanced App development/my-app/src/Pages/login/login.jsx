@@ -1,85 +1,60 @@
 import React from "react";
-import "/src/assets/Css/login.css";
-import { FaUserShield } from "react-icons/fa";
-import { BsFillShieldLockFill } from "react-icons/bs";
-import { AiOutlineSwapRight } from "react-icons/ai";
-import video from "/src/assets/Media/video.mp4";
+import "/src/assets/Css/login.css"; // Import CSS for styling
+import { FaLinkedinIn } from "react-icons/fa";
+import { FaFacebook } from "react-icons/fa";
+import { IoMdMail } from "react-icons/io";
 import { useNavigate } from "react-router-dom";
-
 const Login = () => {
-  const navigate = useNavigate();
-  const ClickSignUp = () => {
-    navigate("/routeTo/signUp");
-  };
+  const nav = useNavigate();
+  const singin=()=>{
+    nav("/routeTo/signUp");
+  }
   return (
-    <div className="loginPage">
-      <div className="loginPage-container">
-        <div className="login-left">
-          <div className="login-video-container">
-            <div className="login-left-content">
-              <span className="login-left-content-span">
-                Hello
-                <br /> Create your
-                <br /> account here...
-              </span>
-              <div className="login-actions">
-                <span>Don't you have an account?</span>
-                <button className="loginpage-btn" onClick={ClickSignUp}>
-                  Sign Up
-                </button>
-              </div>
-            </div>
-            <video className="video-bg" autoPlay loop muted>
-              <source src={video} type="video/mp4" />
-            </video>
-          </div>
+    <div className="login-container">
+      <div className="left-half">
+        <h1 className="left-half-header">Welcome Back!</h1>
+        <p className="left-half-content">To Keep Contactedd with us please</p>
+        <p className="left-half-content">Login with your personal info</p>
+      </div>
+      <div className="right-half">
+        <header className="login-header">
+          <h2>
+            Sign In to Your <span style={{ color: "orangered" }}>Account</span>
+          </h2>
+        </header>
+        <div className="social-icons">
+          <FaFacebook className="react-icons" />
+          <FaLinkedinIn className="react-icons" />
+          <IoMdMail className="react-icons" />
         </div>
-
-        <div className="login-right">
-          <div className="login-header">
-            <header>Welcome back!</header>
+        <div className="right-half-form-container">
+        <form className="login-form">
+          <div className="input-field">
+            <i className="material-icons" style={{ paddingLeft: "10px" }}>
+              person
+            </i>
+            <input
+              className="input-field-inputs"
+              type="email"
+              placeholder="Email"
+            />
           </div>
-          <div className="loginForm-container">
-            <form>
-              <div className="login-inputs">
-                <label htmlFor="username" className="top-label">
-                  Username
-                </label>
-                <div className="input-container">
-                  <FaUserShield className="react-icon" />
-                  <input
-                    type="text"
-                    id="username"
-                    placeholder="Enter Username..."
-                  />
-                </div>
-              </div>
-
-              <div className="login-inputs">
-                <label htmlFor="password" className="bottom-label">
-                  Password
-                </label>
-                <div className="input-container">
-                  <BsFillShieldLockFill className="react-icon" />
-                  <input
-                    type="password"
-                    id="password"
-                    placeholder="Enter Password..."
-                  />
-                </div>
-              </div>
-            </form>
+          <div className="input-field">
+            <i className="material-icons">lock</i>
+            <input
+              className="input-field-inputs"
+              type="password"
+              placeholder="Password"
+            />
           </div>
-          <div className="login-footer">
-            <button
-              type="submit"
-              className="loginpage-btn"
-              onClick={ClickSignUp}
-            >
-              <span>Login</span>
-              <AiOutlineSwapRight className="login-icon" />
-            </button>
+          <div className="forgot-password">
+            <a href="#">Forgot password?</a>
           </div>
+          <button className="login-btn" type="submit" onClick={singin}>
+            Sign In
+          </button>
+          <p style={{position:"relative",top:"20px",marginLeft:'30px',fontSize:"18px",color:"white"}}>Don't you have an account?Register</p>
+        </form>
         </div>
       </div>
     </div>

@@ -1,15 +1,17 @@
-import { Suspense } from "react"
-import propTypes from "prop-types";
-const LazyLayout=({component:Component,...rest})=>{
-    return(
-        <Suspense fallback="Loading...">
-            <Component {...rest} />
-        </Suspense>
-    )
-}
+import { Suspense } from "react";
+import PropTypes from "prop-types";
+import LoadingSpinner from "./spinning";
 
-LazyLayout.propTypes ={
-    component: propTypes.elementType.isRequired
-}
+const LazyLayout = ({ component: Component, ...rest }) => {
+  return (
+    <Suspense fallback={<LoadingSpinner />}>
+      <Component {...rest} />
+    </Suspense>
+  );
+};
+
+LazyLayout.propTypes = {
+  component: PropTypes.elementType.isRequired
+};
 
 export default LazyLayout;

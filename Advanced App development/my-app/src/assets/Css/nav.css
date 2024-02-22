@@ -1,14 +1,20 @@
-@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=Protest+Revolution&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=Protest+Revolution&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Protest+Riot&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap');
 .navbar {
   height: 10vh;
   width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color:black;
+  background-color: #0a0908;
   color: #fff;
   padding: 10px 20px;
   padding: 10px;
+}
+.nav-menu {
+  margin-left: 15px;
+  font-size: 30px;
 }
 
 .navbar-left,
@@ -21,13 +27,13 @@
   align-items: center;
   justify-content: center;
 }
-.navbar-left p{
+.navbar-left p {
   position: relative;
-  margin-left: 25px;
   font-size: 24px;
+  margin-left: 10px;
 }
-.navbar-left span{
-  color:orangered;
+.navbar-left span {
+  color: orangered;
 }
 
 .navbar-center {
@@ -36,7 +42,7 @@
   align-items: center;
   justify-content: space-evenly;
   border-radius: 16px;
-  gap: 30px; 
+  gap: 30px;
   width: 50%;
   /* background-color: rgb(44, 40, 40); */
   height: 100%;
@@ -49,21 +55,31 @@
 .navbar-center li a {
   color: #fff;
   text-decoration: none;
-  padding: 12px 24px;
-  transition: background-color 1 ease-in-out;
-}
-.navbar-center li a:hover {
-    background-color: orangered;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    /* padding: 8px 16px; */
-    cursor: pointer;
+  padding: 12px 20px;
+  font-family: "Protest Riot", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  transition: background-color 0.3s ease-in-out; /* Updated duration */
 }
 
-.logout-btn {
+.navbar-center li a:hover {
   background-color: orangered;
   color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.profile-icon{
+  font-size: 30px;
+  margin-right: 20px;
+}
+.profile-icon:hover{
+  color: orangered;
+}
+
+.nav-logout-btn {
+  color: #fff;
+  background-color: orangered;
   border: none;
   border-radius: 5px;
   padding: 12px 28px;
@@ -71,6 +87,95 @@
   margin-right: 20px;
 }
 
-.logout-btn:hover {
-  background-color: #0056b3;
+.nav-logout-btn:hover {
+  background-color: orangered;
+}
+.sidebar {
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  top: 0;
+  left: -250px; /* Initially hide the sidebar off-screen */
+  width: 250px; /* Set the width of the sidebar */
+  height: 100vh; /* Take up the full height of the viewport */
+  background-color: #0a0908; /* Sidebar background color */
+  transition: left 0.3s ease; /* Add smooth transition for opening and closing */
+  z-index: 1; /* Ensure sidebar is above other content */
+  overflow-y: auto; /* Add vertical scroll if content exceeds sidebar height */
+  padding-top: 60px; /* Space for close button */
+}
+
+.sidebar.open {
+  left: 0; /* Show the sidebar by setting left to 0 */
+}
+
+.sidebar-content {
+  padding: 40px;
+}
+
+.sidebar-items {
+  /* background-color: violet; */
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.sidebar-items > * {
+  margin-right: 10px;
+  margin-top: 20px; 
+}
+
+.sidebar-items a {
+  font-family: "Roboto Mono", monospace;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  color: #fff;
+  text-decoration: none;
+  font-size: 16px;
+  transition: color 0.3s ease; /* Add smooth transition for link color */
+}
+
+.sidebar-items a:hover {
+  color: #f0f0f0; /* Change link color on hover */
+}
+
+.close-sidebar {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  font-size: 24px;
+  color: #fff;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.close-sidebar:hover {
+  color: #ccc; /* Change close button color on hover */
+}
+
+
+.sidebar-items-img{
+  margin-left: 10px;
+  margin-bottom: 50px;
+  height: 100px;
+  width: 100px;
+  border-radius: 50%;
+}
+.sidebar-profile{
+  width: 100%;
+  height: 200px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+}
+.profile-name{
+  position: relative;
+  bottom: 30px;
+  font-size: 24px;
+  color: orangered;
 }
