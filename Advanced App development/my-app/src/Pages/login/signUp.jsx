@@ -1,6 +1,7 @@
 import { useState } from "react";
 import "/src/assets/Css/signUp.css";
-import video from "/src/assets/Media/video.mp4";
+import { Link } from "react-router-dom";
+
 const Signup = () => {
   const [firstname, setFirstname] = useState("");
   const [lastName, setLastName] = useState("");
@@ -10,14 +11,17 @@ const Signup = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    // You can add your form submission logic here
   };
+
   return (
     <div className="signup-container">
+      <div className="signup-left">
+        <h1>Join<br/> Our <br/><span>Community!</span></h1>
+        <p>Get exclusive access to our features by signing up today.</p>
+      </div>
       <div className="signup-form-container">
-        <video className="video-bg" style={{ filter: "blur(0px)" }} autoPlay loop muted>
-          <source src={video} type="video/mp4" />
-        </video>
-        <form onSubmit={handleSubmit}>
+        <form onSubmit={handleSubmit} className="signup-form">
           <div className="signup-form-container-input">
             <h1>Register here</h1>
             <div className="signup-form-container-input-name">
@@ -25,7 +29,7 @@ const Signup = () => {
                 required
                 name="first_name"
                 type="text"
-                placeholder="first name"
+                placeholder="First Name"
                 value={firstname}
                 onChange={(e) => {
                   setFirstname(e.target.value);
@@ -35,7 +39,7 @@ const Signup = () => {
                 required
                 name="last_name"
                 type="text"
-                placeholder="last_name"
+                placeholder="Last Name"
                 value={lastName}
                 onChange={(e) => {
                   setLastName(e.target.value);
@@ -70,14 +74,15 @@ const Signup = () => {
                 setPassword(e.target.value);
               }}
             />
-            <button className="signup-btn">
+            <button className="signup-btn" type="submit">
               <strong>Submit</strong>
             </button>
-            <strong>Already have an account?Login</strong>
+            <p>Already have an account? <Link to="/routeTo/login"><span>Login</span></Link></p>
           </div>
         </form>
       </div>
     </div>
   );
 };
+
 export default Signup;

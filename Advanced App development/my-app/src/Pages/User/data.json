@@ -1,0 +1,50 @@
+[
+  {
+    "id": 1,
+    "img": "/src/assets/Images/coursesImages/B1.png",
+    "courseName": "B1 Business Preliminary",
+    "examFormat": "Computer or paper-based",
+    "Noofpapers": "4",
+    "ExamLength": "About 2 hours 30 minutes"
+  },
+  {
+    "id": 2,
+    "img": "/src/assets/Images/coursesImages/BV.png",
+    "courseName": "B2 Business Vantage",
+    "examFormat": "Computer or paper-based",
+    "Noofpapers": "4",
+    "ExamLength": "About 2 hours 45 minutes"
+  },
+  {
+    "id": 3,
+    "img": "/src/assets/Images/coursesImages/B3.jpg",
+    "courseName": "B3 Business Higher",
+    "examFormat": "Computer or paper-based",
+    "Noofpapers": "4",
+    "ExamLength": "About 3 hours"
+  },
+  {
+    "id": 4,
+    "img": "/src/assets/Images/coursesImages/B1.png",
+    "courseName": "Business Correspondence",
+    "examFormat": "Paper-based",
+    "Noofpapers": "1",
+    "ExamLength": "About 1 hour 30 minutes"
+  },
+  {
+    "id": 5,
+    "img": "/src/assets/Images/coursesImages/B1.png",
+    "courseName": "Business Negotiations",
+    "examFormat": "Paper-based",
+    "Noofpapers": "2",
+    "ExamLength": "About 2 hours"
+  },
+  {
+    "id": 6,
+    "img": "/src/assets/Images/coursesImages/B1.png",
+    "courseName": "Business Presentations",
+    "examFormat": "Computer-based",
+    "Noofpapers": "1",
+    "ExamLength": "About 1 hour 45 minutes"
+  }
+]

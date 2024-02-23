@@ -79,9 +79,10 @@
 }
 
 .info-row-data {
+  position: absolute;
   flex-grow: 1; /* Allow the right data to grow and take up remaining space */
   display: flex;
-  margin-left: 19px;
+  margin-left: 60px;
 }
 
 .info-row-data p {

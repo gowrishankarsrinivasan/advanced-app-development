@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { Link } from "react-router-dom"; // Import Link component from react-router-dom
 import "/src/assets/Css/nav.css";
 import { MdOutlineMenuOpen } from "react-icons/md";
@@ -11,16 +11,42 @@ import { RiMenuFoldLine } from "react-icons/ri";
 
 const Navbar = () => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+  const [isProfileDropdownOpen, setIsProfileDropdownOpen] = useState(false);
+  const profileDropdownRef = useRef(null);
 
   const toggleSidebar = () => {
     setIsSidebarOpen(!isSidebarOpen);
   };
 
+  const toggleProfileDropdown = () => {
+    setIsProfileDropdownOpen(!isProfileDropdownOpen);
+  };
+
   const nav = useNavigate();
 
-  const handleClick = () => {
+  const handleProfile = () => {
     nav("/user/profile");
   };
+  const handleLogout = () => {
+    nav("/routeTo/signUp");
+  };
+
+  // Close the dropdown when clicking outside of it
+  useEffect(() => {
+    function handleClickOutside(event) {
+      if (
+        profileDropdownRef.current &&
+        !profileDropdownRef.current.contains(event.target)
+      ) {
+        setIsProfileDropdownOpen(false);
+      }
+    }
+
+    window.addEventListener("click", handleClickOutside);
+    return () => {
+      window.removeEventListener("click", handleClickOutside);
+    };
+  }, []);
 
   return (
     <nav className="navbar">
@@ -45,21 +71,34 @@ const Navbar = () => {
         </li>
       </ul>
       <div className="navbar-right">
-        <CgProfile onClick={handleClick} className="profile-icon" />
-        <button className="nav-logout-btn">Logout</button>
+        <div ref={profileDropdownRef}>
+          <CgProfile className="profile-icon" onClick={toggleProfileDropdown} />
+          {isProfileDropdownOpen && (
+            <div className="profile-dropdown">
+              <button onClick={handleProfile} className="nav-logout-button">
+                Profile
+              </button>
+              <button onClick={handleLogout} className="nav-logout-button">
+                Logout
+              </button>
+            </div>
+          )}
+        </div>
       </div>
       <div className={`sidebar ${isSidebarOpen ? "open" : ""}`}>
         <button className="close-sidebar" onClick={toggleSidebar}>
-        <RiMenuFoldLine className="nav-menu"/>
+          <RiMenuFoldLine className="nav-menu" />
         </button>
         <div className="sidebar-profile">
-          <Link to="/user/profile"><img className="sidebar-items-img" src={img} /></Link>
+          <Link to="/user/profile">
+            <img className="sidebar-items-img" src={img} />
+          </Link>
           <p className="profile-name">Profile name</p>
         </div>
         <div className="sidebar-content">
           <div className="sidebar-items">
             <IoMdHome />
-            <Link to="/product">Home</Link>
+            <Link to="/user/home">Home</Link>
           </div>
           <div className="sidebar-items">
             <IoMdHome />
@@ -67,7 +106,7 @@ const Navbar = () => {
           </div>
           <div className="sidebar-items">
             <MdDashboard />
-            <Link to="/product">Add Course</Link>
+            <Link to="/user/courseList">Add Course</Link>
           </div>
           <div className="sidebar-items">
             <IoMdHome />
@@ -82,5 +121,4 @@ const Navbar = () => {
     </nav>
   );
 };
-
 export default Navbar;

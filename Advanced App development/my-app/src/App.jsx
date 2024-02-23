@@ -54,12 +54,13 @@ const LazyLogin = lazy(() => import("./Pages/login/login"));
 const LazysignUp = lazy(() => import("./Pages/login/signUp"));
 const LazyHome = lazy(() => import("./Pages/User/homepage"));
 const LazyProfile = lazy(() => import("./Pages/User/Profile"));
-
+const LazyCourseListing = lazy(()=> import("./Pages/User/Course"));
 const UserRoutes = () => {
   return (
     <UserLayout>
       <Routes>
         <Route path="/home" element={<LazyLayout component={LazyHome} />} />
+        <Route path="/courseList" element={<LazyLayout component={LazyCourseListing} />} />
         <Route
           path="/profile"
           element={<LazyLayout component={LazyProfile} />}
@@ -74,7 +75,7 @@ const App = () => {
     <div className="App">
       <Suspense fallback={<LoadingSpinner />}>
         <Routes>
-          <Route exact path="/" element={<Navigate to="/routeTo/signUp" />} />
+          <Route exact path="/" element={<Navigate to="/routeTo/login"/>} />
           <Route
             exact
             path="/routeTo/login"

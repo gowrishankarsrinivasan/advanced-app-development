@@ -77,19 +77,6 @@
   color: orangered;
 }
 
-.nav-logout-btn {
-  color: #fff;
-  background-color: orangered;
-  border: none;
-  border-radius: 5px;
-  padding: 12px 28px;
-  cursor: pointer;
-  margin-right: 20px;
-}
-
-.nav-logout-btn:hover {
-  background-color: orangered;
-}
 .sidebar {
   position: fixed;
   display: flex;
@@ -178,4 +165,56 @@
   bottom: 30px;
   font-size: 24px;
   color: orangered;
+}
+
+
+.navbar-right {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.profile-icon {
+  position: relative;
+  font-size: 34px;
+  cursor: pointer;
+  margin-right: 70px;
+}
+
+.profile-dropdown {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  height: 100px;
+  width: 100px;
+  position: absolute;
+  top: 60px; /* Adjust this value to position the dropdown properly */
+  right: 50px; /* Adjust this value to position the dropdown properly */
+  background-color:transparent;
+  color: #fff;
+  border-radius: 5px;
+  /* padding: 10px; */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+
+
+
+.nav-logout-button{
+  /* color: #fff; */
+  font-size: 16px;
+  border: 1px solid red;
+  background-color: orangered;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 12px 28px;
+  width: 100%;
+  cursor: pointer;
+
+}
+
+.nav-logout-button:hover {
+  background-color: orangered;
 }

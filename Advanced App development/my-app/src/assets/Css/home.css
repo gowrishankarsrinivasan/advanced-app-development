@@ -1,5 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=Protest+Revolution&display=swap');
-.home-container{
+@import url('https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&display=swap');
+.home-container-top{
     height: 90vh;
     width: 100%;
     background-position: center;
@@ -49,4 +51,150 @@
     opacity: 1;
     transform: translateX(0);
   }
+}
+
+
+
+
+
+.card-container {
+  height: 60vh;
+  /* padding: 20px; */
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  justify-content:center;
+  width: 100%;
+}
+
+.card {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  align-items: center;
+  /* justify-content: space-around; */
+  padding: 10px;
+  /* justify-content: space-around; */
+  width: 400px;
+  height: 300px;
+  background-color: #ccc;
+}
+.home-img{
+  height: 60%;
+  width: 80%;
+}
+
+
+
+
+
+.home-middle-container-wrapper {
+  display: flex;
+  width: 100%;
+  height: auto;
+  flex-direction: column;
+  justify-content: space-evenly; 
+  gap: 30px;
+}
+
+.home-middle-container-first {
+  height: 60vh;
+  width: 100%;
+  display: flex;
+}
+
+.home-content-1 {
+  position: relative;
+  width: 60%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  right: 50px;
+  
+}
+
+.middle-img-container-1 {
+  width: 40%;
+}
+.home-content-container-1 h1{
+  font-size: 30px;
+  font-family: "Exo 2", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: normal;
+}
+.home-content-container-2 h1{
+  font-size: 30px;
+  font-family: "Exo 2", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: normal;
+}
+.home-content-container-1 p{
+  margin-top:30px ;
+  line-height: 1.5;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+  font-size: 20px;
+  font-family: "Caveat", cursive;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: normal;
+}
+.home-content-container-2 p{
+  margin-top:30px ;
+  line-height: 1.5;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+  font-size: 20px;
+  font-family: "Caveat", cursive;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: normal;
+}
+.home-content-2 {
+  position: relative;
+  left: 50px;
+  width: 60%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.middle-img-container-2 {
+  width: 40%;
+}
+
+/* Reverse layout for the second child container */
+.home-middle-container-wrapper .home-middle-container-first:nth-child(2) .home-content-1 {
+  order: 2; /* Reverse the order of content and image */
+}
+
+.home-middle-container-wrapper .home-middle-container-first:nth-child(2) .middle-img-container-1 {
+  order: 1; /* Reverse the order of content and image */
+}
+.home-content-container-1{
+  height: 40vh;
+  width: 50%;
+
+  padding: 10px;
+}
+.home-content-container-2{
+  height: 40vh;
+  width: 60%;
+
+  
+}
+
+.middle-img-container-1-img{
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 60vh;
+  width: 100%;
+}
+.middle-img-container-2-img{
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 60vh;
+  width: 100%;
 }

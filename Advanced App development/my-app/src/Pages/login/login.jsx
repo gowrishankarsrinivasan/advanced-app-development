@@ -4,11 +4,12 @@ import { FaLinkedinIn } from "react-icons/fa";
 import { FaFacebook } from "react-icons/fa";
 import { IoMdMail } from "react-icons/io";
 import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 const Login = () => {
   const nav = useNavigate();
-  const singin=()=>{
+  const singin = () => {
     nav("/routeTo/signUp");
-  }
+  };
   return (
     <div className="login-container">
       <div className="left-half">
@@ -28,33 +29,46 @@ const Login = () => {
           <IoMdMail className="react-icons" />
         </div>
         <div className="right-half-form-container">
-        <form className="login-form">
-          <div className="input-field">
-            <i className="material-icons" style={{ paddingLeft: "10px" }}>
-              person
-            </i>
-            <input
-              className="input-field-inputs"
-              type="email"
-              placeholder="Email"
-            />
-          </div>
-          <div className="input-field">
-            <i className="material-icons">lock</i>
-            <input
-              className="input-field-inputs"
-              type="password"
-              placeholder="Password"
-            />
-          </div>
-          <div className="forgot-password">
-            <a href="#">Forgot password?</a>
-          </div>
-          <button className="login-btn" type="submit" onClick={singin}>
-            Sign In
-          </button>
-          <p style={{position:"relative",top:"20px",marginLeft:'30px',fontSize:"18px",color:"white"}}>Don't you have an account?Register</p>
-        </form>
+          <form className="login-form">
+            <div className="input-field">
+              <i className="material-icons" style={{ paddingLeft: "10px" }}>
+                person
+              </i>
+              <input
+                className="input-field-inputs"
+                type="email"
+                placeholder="Email"
+              />
+            </div>
+            <div className="input-field">
+              <i className="material-icons">lock</i>
+              <input
+                className="input-field-inputs"
+                type="password"
+                placeholder="Password"
+              />
+            </div>
+            <div className="forgot-password">
+              <a href="#">Forgot password?</a>
+            </div>
+            <button className="login-btn" type="submit" onClick={singin}>
+              Sign In
+            </button>
+            <p
+              style={{
+                position: "relative",
+                top: "20px",
+                marginLeft: "30px",
+                fontSize: "18px",
+                color: "white",
+              }}
+            >
+              Don't you have an account?
+              <Link to="/routeTo/signUp">
+                <span>Register</span>
+              </Link>
+            </p>
+          </form>
         </div>
       </div>
     </div>
