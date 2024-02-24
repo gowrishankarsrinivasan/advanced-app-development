@@ -1,22 +1,26 @@
 @import url("https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=Protest+Revolution&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Protest+Riot&display=swap");
-@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap");
+/* Layer 1: Navbar styles */
 .navbar {
   height: 10vh;
   width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #0a0908;
-  color: #fff;
+  background-color: #bee1e6;
   padding: 10px 20px;
   padding: 10px;
+  box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
 }
+
+/* Layer 2: Styles for the menu icon */
 .nav-menu {
   margin-left: 15px;
   font-size: 30px;
 }
 
+/* Layer 2: Styles for the left section of the navbar */
 .navbar-left,
 .navbar-right {
   font-family: "Rubik", sans-serif;
@@ -27,15 +31,20 @@
   align-items: center;
   justify-content: center;
 }
+
+/* Layer 3: Styles for the navbar brand */
 .navbar-left p {
   position: relative;
   font-size: 24px;
   margin-left: 10px;
 }
+
+/* Layer 3: Styles for the span within the navbar brand */
 .navbar-left span {
   color: orangered;
 }
 
+/* Layer 4: Styles for the navbar center section */
 .navbar-center {
   list-style: none;
   display: flex;
@@ -44,39 +53,48 @@
   border-radius: 16px;
   gap: 30px;
   width: 50%;
-  /* background-color: rgb(44, 40, 40); */
   height: 100%;
 }
 
+/* Layer 5: Styles for the list items in the navbar center */
 .navbar-center li {
   font-size: 18px;
 }
 
+/* Layer 6: Styles for the links in the navbar center */
 .navbar-center li a {
-  color: #fff;
+  color: #0a0908;
   text-decoration: none;
   padding: 12px 20px;
   font-family: "Protest Riot", sans-serif;
   font-weight: 400;
   font-style: normal;
-  transition: background-color 0.3s ease-in-out; /* Updated duration */
+  transition: box-shadow 300ms ease-in-out;
 }
 
+/* Layer 6: Hover styles for the links in the navbar center */
 .navbar-center li a:hover {
   background-color: orangered;
+  box-shadow: 0 0 .25rem rgba(0, 0, 0, 0.5), -.125rem -.125rem 1rem rgba(239, 71, 101, 0.5), .125rem .125rem 1rem rgba(255, 154, 90, 0.5);
+
   color: #fff;
   border: none;
   border-radius: 5px;
   cursor: pointer;
 }
-.profile-icon{
+
+/* Layer 7: Styles for the profile icon */
+.profile-icon {
   font-size: 30px;
   margin-right: 20px;
 }
-.profile-icon:hover{
+
+/* Layer 7: Hover styles for the profile icon */
+.profile-icon:hover {
   color: orangered;
 }
 
+/* Layer 8: Styles for the sidebar */
 .sidebar {
   position: fixed;
   display: flex;
@@ -84,36 +102,40 @@
   align-items: center;
   justify-content: center;
   top: 0;
-  left: -250px; /* Initially hide the sidebar off-screen */
-  width: 250px; /* Set the width of the sidebar */
-  height: 100vh; /* Take up the full height of the viewport */
-  background-color: #0a0908; /* Sidebar background color */
-  transition: left 0.3s ease; /* Add smooth transition for opening and closing */
-  z-index: 1; /* Ensure sidebar is above other content */
-  overflow-y: auto; /* Add vertical scroll if content exceeds sidebar height */
-  padding-top: 60px; /* Space for close button */
+  left: -250px;
+  width: 250px;
+  height: 100vh;
+  background-color: #0a0908;
+  transition: left 0.3s ease;
+  z-index: 1;
+  overflow-y: auto;
+  padding-top: 60px;
 }
 
+/* Layer 9: Styles for the open sidebar */
 .sidebar.open {
-  left: 0; /* Show the sidebar by setting left to 0 */
+  left: 0;
 }
 
+/* Layer 10: Styles for the sidebar content */
 .sidebar-content {
   padding: 40px;
 }
 
+/* Layer 11: Styles for the sidebar items */
 .sidebar-items {
-  /* background-color: violet; */
   display: flex;
   align-items: center;
   margin-bottom: 20px;
 }
 
+/* Layer 12: Styles for the elements within sidebar items */
 .sidebar-items > * {
   margin-right: 10px;
-  margin-top: 20px; 
+  margin-top: 20px;
 }
 
+/* Layer 13: Styles for the sidebar links */
 .sidebar-items a {
   font-family: "Roboto Mono", monospace;
   font-optical-sizing: auto;
@@ -122,13 +144,15 @@
   color: #fff;
   text-decoration: none;
   font-size: 16px;
-  transition: color 0.3s ease; /* Add smooth transition for link color */
+  transition: color 0.3s ease;
 }
 
+/* Layer 13: Hover styles for the sidebar links */
 .sidebar-items a:hover {
-  color: #f0f0f0; /* Change link color on hover */
+  color: #f0f0f0;
 }
 
+/* Layer 14: Styles for the close sidebar button */
 .close-sidebar {
   position: absolute;
   top: 20px;
@@ -140,19 +164,13 @@
   cursor: pointer;
 }
 
+/* Layer 15: Hover styles for the close sidebar button */
 .close-sidebar:hover {
-  color: #ccc; /* Change close button color on hover */
+  color: #ccc;
 }
 
-
-.sidebar-items-img{
-  margin-left: 10px;
-  margin-bottom: 50px;
-  height: 100px;
-  width: 100px;
-  border-radius: 50%;
-}
-.sidebar-profile{
+/* Layer 16: Styles for the sidebar profile section */
+.sidebar-profile {
   width: 100%;
   height: 200px;
   display: flex;
@@ -160,49 +178,33 @@
   align-items: center;
   justify-content: space-around;
 }
-.profile-name{
+
+/* Layer 17: Styles for the sidebar profile image */
+.sidebar-items-img {
+  margin-left: 10px;
+  margin-bottom: 50px;
+  height: 100px;
+  width: 100px;
+  border-radius: 50%;
+}
+
+/* Layer 18: Styles for the sidebar profile name */
+.profile-name {
   position: relative;
   bottom: 30px;
   font-size: 24px;
   color: orangered;
 }
 
-
+/* Layer 19: Styles for the right section of the navbar */
 .navbar-right {
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-.profile-icon {
-  position: relative;
-  font-size: 34px;
-  cursor: pointer;
-  margin-right: 70px;
-}
-
-.profile-dropdown {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-around;
-  height: 100px;
-  width: 100px;
-  position: absolute;
-  top: 60px; /* Adjust this value to position the dropdown properly */
-  right: 50px; /* Adjust this value to position the dropdown properly */
-  background-color:transparent;
-  color: #fff;
-  border-radius: 5px;
-  /* padding: 10px; */
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-}
-
-
-
-
-.nav-logout-button{
-  /* color: #fff; */
+/* Layer 20: Styles for the logout button within profile dropdown */
+.nav-logout-button {
   font-size: 16px;
   border: 1px solid red;
   background-color: orangered;
@@ -212,9 +214,26 @@
   padding: 12px 28px;
   width: 100%;
   cursor: pointer;
-
 }
 
+/* Layer 21: Hover styles for the logout button within profile dropdown */
 .nav-logout-button:hover {
   background-color: orangered;
+}
+
+/* Layer 22: Styles for the profile dropdown */
+.profile-dropdown {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  height: 100px;
+  width: 100px;
+  position: absolute;
+  top: 60px;
+  right: 50px;
+  background-color: transparent;
+  color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 }

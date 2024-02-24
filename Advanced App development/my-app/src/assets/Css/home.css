@@ -1,47 +1,94 @@
-@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=Protest+Revolution&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100..900;1,100..900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&display=swap');
-.home-container-top{
-    height: 90vh;
-    width: 100%;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-color: #253237;
-    color: aliceblue;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 40px;
+/* Layer 1: Styles for the top section of the homepage */
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=Protest+Revolution&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Protest+Riot&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap");
+.home-container {
+  background-color: aliceblue;
 }
+.home-container-top {
+  height: 90vh;
+  width: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: black;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+}
+.home-down-arrow {
+  position: relative;
+  top: 100px;
+  width: 23px;
+  height: 23px;
+  border: 2px solid #333;
+  border-left: 0;
+  border-top: 0;
+  transition: border 300ms ease-in-out;
+  transform: rotate(45deg);
+}
+
+/* Layer 2: Styles for the heading */
 .home-h1 {
-    font-family: "Outfit", sans-serif;
-    font-size: 80px;
-    font-optical-sizing: auto;
-    font-weight:700;
-    font-style: normal;
-    animation: slideInFromLeft 1.5s ease-out forwards;
-  }
-  .protest-revolution-regular {
-    font-size: 40px;
-    font-family: "Protest Revolution", sans-serif;
-    font-weight: 400;
-    font-style: normal;
-    animation: slideInFromLeft 1.5s ease-out forwards;
-  }
-.home-button{
-    padding: 16px 50px;
-    background-color: orangered;
-    border: none;
-    color: white;
-    font-size: 20px;
-    font-weight: 600;
-    animation: slideInFromLeft 1.5s ease-out forwards;
+  font-family: "Outfit", sans-serif;
+  font-size: 80px;
+  font-optical-sizing: auto;
+  font-weight: 700;
+  font-style: normal;
+  animation: slideInFromLeft 1.5s ease-out forwards;
 }
 
+/* Layer 2: Styles for the subheading */
+.protest-revolution-regular {
+  font-size: 40px;
+  font-family: "Protest Revolution", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  animation: slideInFromLeft 1.5s ease-out forwards;
+}
 
+/* Layer 2: Styles for the button */
 
+/* CSS */
+.home-button {
+  margin: 10px;
+  padding: 20px 45px;
+  text-align: center;
+  text-transform: uppercase;
+  transition: 0.5s;
+  background-size: 200% auto;
+  color: white;
+  border-radius: 10px;
+  display: block;
+  border: 0px;
+  font-weight: 700;
+  box-shadow: 0px 0px 14px -7px #f09819;
+  background-image: linear-gradient(
+    45deg,
+    #ff512f 0%,
+    #f09819 51%,
+    #ff512f 100%
+  );
+  cursor: pointer;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.home-button:hover {
+  background-position: right center;
+  /* change the direction of the change here */
+  color: #fff;
+  text-decoration: none;
+}
+
+.home-button:active {
+  transform: scale(0.95);
+}
+
+/* Keyframes for animation */
 @keyframes slideInFromLeft {
   0% {
     opacity: 0;
@@ -53,148 +100,376 @@
   }
 }
 
-
-
-
-
+/* Layer 3: Styles for the card container */
 .card-container {
   height: 60vh;
-  /* padding: 20px; */
   display: flex;
   align-items: center;
   gap: 20px;
-  justify-content:center;
+  justify-content: center;
   width: 100%;
 }
 
+/* Layer 3: Styles for the cards */
 .card {
   display: flex;
   flex-wrap: wrap;
   flex-direction: column;
   align-items: center;
-  /* justify-content: space-around; */
   padding: 10px;
-  /* justify-content: space-around; */
   width: 400px;
   height: 300px;
   background-color: #ccc;
+  border-radius: 10px;
+  box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+  transition: box-shadow 500ms ease-in-out;
 }
-.home-img{
+
+/* Layer 4: Styles for card headings */
+.card h3 {
+  font-size: 16px;
+  font-family: "Exo 2", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: normal;
+}
+
+/* Layer 4: Hover effect for cards */
+.card:hover {
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
+    rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
+    rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+
+/* Layer 3: Styles for card images */
+.home-img {
   height: 60%;
   width: 80%;
 }
 
-
-
-
-
+/* Layer 5: Styles for the middle section wrapper */
 .home-middle-container-wrapper {
   display: flex;
   width: 100%;
   height: auto;
   flex-direction: column;
-  justify-content: space-evenly; 
+  justify-content: space-evenly;
   gap: 30px;
 }
 
+/* Layer 6: Styles for the first middle container */
 .home-middle-container-first {
   height: 60vh;
   width: 100%;
   display: flex;
+  padding-bottom: 20px;
 }
 
+/* Layer 7: Styles for the first content section */
 .home-content-1 {
-  position: relative;
   width: 60%;
   display: flex;
   align-items: center;
   justify-content: flex-end;
-  right: 50px;
-  
-}
-
-.middle-img-container-1 {
-  width: 40%;
-}
-.home-content-container-1 h1{
-  font-size: 30px;
-  font-family: "Exo 2", sans-serif;
-  font-optical-sizing: auto;
-  font-weight: 500;
-  font-style: normal;
-}
-.home-content-container-2 h1{
-  font-size: 30px;
-  font-family: "Exo 2", sans-serif;
-  font-optical-sizing: auto;
-  font-weight: 500;
-  font-style: normal;
-}
-.home-content-container-1 p{
-  margin-top:30px ;
-  line-height: 1.5;
-  text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
-  font-size: 20px;
-  font-family: "Caveat", cursive;
-  font-optical-sizing: auto;
-  font-weight: 500;
-  font-style: normal;
-}
-.home-content-container-2 p{
-  margin-top:30px ;
-  line-height: 1.5;
-  text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
-  font-size: 20px;
-  font-family: "Caveat", cursive;
-  font-optical-sizing: auto;
-  font-weight: 500;
-  font-style: normal;
 }
 .home-content-2 {
-  position: relative;
-  left: 50px;
   width: 60%;
   display: flex;
   align-items: center;
   justify-content: flex-start;
 }
 
+/* Layer 8: Styles for the first image container */
+.middle-img-container-1 {
+  width: 40%;
+}
+
+/* Layer 7: Styles for the first content container */
+.home-content-container-1 {
+  height: 40vh;
+  width: 50%;
+  padding: 10px;
+  position: relative;
+  right: 70px;
+}
+
+/* Layer 7: Styles for the second content container */
+.home-content-container-2 {
+  height: 40vh;
+  width: 50%;
+  padding: 10px;
+  position: relative;
+  left: 70px;
+}
+
+/* Layer 8: Styles for the second image container */
 .middle-img-container-2 {
   width: 40%;
 }
 
-/* Reverse layout for the second child container */
-.home-middle-container-wrapper .home-middle-container-first:nth-child(2) .home-content-1 {
+/* Layer 9: Reverse layout for the second child container */
+.home-middle-container-wrapper
+  .home-middle-container-first:nth-child(2)
+  .home-content-1 {
   order: 2; /* Reverse the order of content and image */
 }
 
-.home-middle-container-wrapper .home-middle-container-first:nth-child(2) .middle-img-container-1 {
+/* Layer 9: Reverse layout for the second child container */
+.home-middle-container-wrapper
+  .home-middle-container-first:nth-child(2)
+  .middle-img-container-1 {
   order: 1; /* Reverse the order of content and image */
 }
-.home-content-container-1{
-  height: 40vh;
-  width: 50%;
 
-  padding: 10px;
+/* Layer 7: Styles for content headings */
+.home-content-container-1 h1,
+.home-content-container-2 h1 {
+  font-size: 30px;
+  font-family: "Exo 2", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: normal;
 }
-.home-content-container-2{
-  height: 40vh;
-  width: 60%;
 
+/* Layer 7: Styles for content paragraphs */
+.home-content-container-1 p,
+.home-content-container-2 p {
+  margin-top: 30px;
+  line-height: 1.5;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+  font-size: 20px;
+  font-family: "Caveat", cursive;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: normal;
+}
+
+/* Layer 7: Styles for the first image */
+.middle-img-container-1-img,
+.middle-img-container-2-img {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 60vh;
+  width: 100%;
+}
+
+.about-container {
+  padding: 20px;
+  width: 100%;
+  height: 60vh;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #ced4da; /* Change the background color as needed */
+}
+
+.about-container-wrapper {
+  width: 80%;
+  height: 80%;
+  display: flex;
+  flex-direction: column;
+}
+
+.about-container-header {
+  text-align: center;
+}
+
+.about-container-header h1 {
+  font-size: 2rem; /* Adjust font size as needed */
+  margin-bottom: 10px;
+}
+
+.about-container-header p {
+  font-size: 1rem; /* Adjust font size as needed */
+}
+
+.about-container-body {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 20px;
+}
+
+.about-container-card {
+  margin-top: 25px;
+  width: 150px; /* Adjust card width as needed */
+  height: 150px; /* Adjust card height as needed */
+  background-color: #ffffff; /* Change card background color as needed */
+  border-radius: 50%; /* To make the cards round */
+  margin-left: 30px;
+}
+
+.contact-container {
   
+  height: 80vh;
+  width: 100%;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
 }
 
-.middle-img-container-1-img{
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  height: 60vh;
+.contact-top {
+  /* background-color: #edede9; */
   width: 100%;
+  display: flex;
+  height: 40vh;
 }
-.middle-img-container-2-img{
+
+.contact-top-header {
+  width: 60%;
+}
+.contact-head-wrapper {
+  position: relative;
+  top: 60px;
+  left: 60px;
+}
+.contact-head-wrapper h1 {
+  font-family: "Rubik", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 700;
+  font-style: normal;
+}
+.contact-head-wrapper p{
+  font-family: "Protest Riot", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+.contact-top-img {
+  background-image: url("D:\advanced-app-development\Advanced App development\my-app\src\assets\Images\charanjeet-dhiman-mHusyBu4bxM-unsplash.jpg");
   background-position: center;
-  background-repeat: no-repeat;
   background-size: cover;
-  height: 60vh;
+  background-repeat: no-repeat;
+  width: 40%;
+  border-top-left-radius: 100px;
+  border-bottom-left-radius: 200px;
+}
+
+.contact-bottom {
+  background-color: white;
+  height: 40vh;
   width: 100%;
+  display: flex;
+  gap: 10px;
+  justify-content: space-around;
+}
+
+.contact-bottom-card {
+  padding: 20px;
+  position: relative;
+  bottom: 80px;
+  background-color: white;
+  transition: box-shadow 1s ease-in-out;
+  width: 35%;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+}
+.contact-bottom-card-wrapper{
+  display: flex;
+  gap: 30px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  /* text-align: center; */
+}
+.contact-bottom-card:hover{
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
+}
+.contact-bottom-card-wrapper p {
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+  color: #333;
+  line-height: 1.5;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+
+
+
+/* CSS */
+.contact-link-bottom-card {
+  touch-action: manipulation;
+  appearance: button;
+  background-color: transparent;
+  border-style: initial;
+  border-width: 0;
+  cursor: pointer;
+  margin: 0;
+  text-transform: none;
+  vertical-align: baseline;
+}
+
+.contact-link-bottom-card:focus {
+  outline: 0;
+}
+
+.contact-link-bottom-card {
+  touch-action: manipulation;
+  background-image: linear-gradient(135deg, color(display-p3 .572549 .415686 1) 0%, color(display-p3 1 .466667 .690196) 50%, color(display-p3 1 .701961 .403922) 100%);
+  border-radius: 8px;
+  color: #fff;
+  font-feature-settings: "ss01", "cv10", "calt"0, "liga"0;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 24px;
+  padding: 10px 20px;
+  position: relative;
+  transition: transform .2s cubic-bezier(.6, .6, 0, 1), margin-top .2s cubic-bezier(.6, .6, 0, 1);
+  transition-behavior: normal, normal;
+}
+
+.contact-link-bottom-card::before {
+  -webkit-mask-clip: content-box, initial;
+  -webkit-mask-composite: xor;
+  -webkit-mask-image: linear-gradient(#fff 0, #fff 0), linear-gradient(#fff 0, #fff 0);
+  -webkit-mask-origin: content-box, initial;
+  -webkit-mask-position-x: initial, initial;
+  -webkit-mask-position-y: initial, initial;
+  -webkit-mask-repeat-x: initial, initial;
+  -webkit-mask-repeat-y: initial, initial;
+  -webkit-mask-size: initial, initial;
+  padding: 1px;
+}
+
+.contact-link-bottom-card::before {
+  background-color: initial;
+  background-image: linear-gradient(rgba(255, 255, 255, .32), transparent);
+  bottom: 0;
+  pointer-events: none;
+  right: 0;
+}
+
+.contact-link-bottom-card::after,
+.contact-link-bottom-card::before {
+  border-radius: inherit;
+  content: "";
+  left: 0;
+  position: absolute;
+  top: 0;
+}
+
+.contact-link-bottom-card::after {
+  box-shadow: #000019 0 0, rgba(0, 0, 25, .3) 0 9px 21px, rgba(73, 2, 57, .2) 0 -3px inset;
+  height: 100%;
+  transition: box-shadow .2s cubic-bezier(.6, .6, 0, 1), background-color .2s cubic-bezier(.6, .6, 0, 1);
+  transition-behavior: normal, normal;
+  width: 100%;
+  z-index: 1;
+}
+
+.contact-link-bottom-card:active {
+  transform: translateY(1.5px);
+}
+
+.contact-link-bottom-card:hover::after {
+  background-color: rgba(255, 255, 255, .1);
+}
+
+.contact-link-bottom-card::after {
+  box-shadow: #000019 0 0, rgba(0, 0, 25, .2) 0 9px 21px, rgba(73, 2, 57, .2) 0 0 inset;
 }

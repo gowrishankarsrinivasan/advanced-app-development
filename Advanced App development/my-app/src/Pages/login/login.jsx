@@ -1,4 +1,4 @@
-import React from "react";
+import React,{useState} from "react";
 import "/src/assets/Css/login.css"; // Import CSS for styling
 import { FaLinkedinIn } from "react-icons/fa";
 import { FaFacebook } from "react-icons/fa";
@@ -6,6 +6,15 @@ import { IoMdMail } from "react-icons/io";
 import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
 const Login = () => {
+  const [email,setEmail] = useState('');
+  const [password,setPassword] = useState('');
+  const handleSubmit = ()=>{
+    if(email.includes('@admin.in')){
+      nav("/user/home");
+    }else{
+      nav("/routeTo/signUp");
+    }
+  }
   const nav = useNavigate();
   const singin = () => {
     nav("/routeTo/signUp");
@@ -29,7 +38,7 @@ const Login = () => {
           <IoMdMail className="react-icons" />
         </div>
         <div className="right-half-form-container">
-          <form className="login-form">
+          <form className="login-form" onSubmit={handleSubmit}>
             <div className="input-field">
               <i className="material-icons" style={{ paddingLeft: "10px" }}>
                 person
@@ -37,6 +46,8 @@ const Login = () => {
               <input
                 className="input-field-inputs"
                 type="email"
+                value={email}
+                onChange={(e)=>setEmail(e.target.value)}
                 placeholder="Email"
               />
             </div>
@@ -45,6 +56,8 @@ const Login = () => {
               <input
                 className="input-field-inputs"
                 type="password"
+                value={password}
+                onChange={(e)=>setPassword(e.target.value)}
                 placeholder="Password"
               />
             </div>

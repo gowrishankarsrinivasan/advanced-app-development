@@ -1,5 +1,10 @@
-import React from "react";
+import React, { useState, useRef } from "react";
 import "/src/assets/Css/home.css";
+import { IoCall } from "react-icons/io5";
+import { FaWhatsappSquare } from "react-icons/fa";
+import { FaFacebook } from "react-icons/fa";
+import { FaTwitter } from "react-icons/fa";
+import { FaInstagramSquare } from "react-icons/fa";
 import img1 from "/src/assets/Images/home_img/learn.jpg";
 import img2 from "/src/assets/Images/home_img/org.jpg";
 import img3 from "/src/assets/Images/home_img/instructor.jpg";
@@ -8,16 +13,37 @@ import c2 from "/src/assets/Images/home_img/c2.jpeg";
 import c3 from "/src/assets/Images/home_img/c3.jpeg";
 import c4 from "/src/assets/Images/home_img/c4.jpeg";
 import c5 from "/src/assets/Images/home_img/c5.jpeg";
-
+import { FaChevronDown } from "react-icons/fa";
 const Homepage = () => {
+  const [isScrolled, setisScrolled] = useState(false);
+  const ref = useRef(null);
+  const handleScroll = () => {
+    window.scrollTo({
+      top: ref.current.offsetTop,
+      behavior: "smooth",
+    });
+    setIsScrolled(true);
+    setTimeout(() => {
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth",
+      });
+      setIsScrolled(false);
+    }, 4000);
+  };
   return (
     <div className="home-container">
       <div className="home-container-top">
         <h2 className="protest-revolution-regular">Welcome to our page!</h2>
         <h1 className="home-h1">IT'S NICE TO MEET YOU</h1>
         <button className="home-button">GET STARTED</button>
+        <div
+          className="home-down-arrow"
+          onClick={handleScroll}
+          style={{ display: isScrolled ? "none" : "block" }}
+        />
       </div>
-      <div className="card-container">
+      <div className="card-container" ref={ref}>
         {/* First card */}
         <div className="card">
           <h3>Support for learners</h3>
@@ -48,7 +74,10 @@ const Homepage = () => {
           </p>
         </div>
       </div>
-      <div className="home-middle-container-wrapper">
+      <div
+        className="home-middle-container-wrapper"
+        style={{ padding: "30px" }}
+      >
         <div className="home-middle-container-first">
           <div className="home-content-1">
             <div className="home-content-container-1">
@@ -130,7 +159,61 @@ const Homepage = () => {
             </div>
           </div>
           <div className="middle-img-container-1">
-            <img className="middle-img-container-1-img" src={c5} />
+            <div className="about-container-wrapper">
+              <img className="middle-img-container-1-img" src={c5} />
+            </div>
+          </div>
+        </div>
+        <div className="about-container">
+          <div className="about-container-header">
+            <h1>Want to improve your English?</h1>
+            <p>
+              Practice material and learning resources to help you improve your
+              English.
+            </p>
+          </div>
+          <div className="about-container-body">
+            <div className="about-container-card"></div>
+            <div className="about-container-card"></div>
+            <div className="about-container-card"></div>
+          </div>
+        </div>
+      </div>
+
+      <div className="contact-container">
+        <div className="contact-top">
+          <div className="contact-top-header">
+            <div className="contact-head-wrapper">
+              <h1>Get in touch</h1>
+              <p>
+                Want to get in touch?, We love to hear from you.Here is how you
+                can reach us
+              </p>
+            </div>
+          </div>
+          <div className="contact-top-img"></div>
+        </div>
+        <div className="contact-bottom">
+          <div className="contact-bottom-card">
+            <IoCall style={{ fontSize: "54px" }} />
+            <h1>Talk to customer Services</h1>
+            <div className="contact-bottom-card-wrapper">
+              <p>
+                Any Queries regarding our course? just pick up the phone and
+                chat with a member of our Service Team
+              </p>
+              <p>+91 1234567890</p>
+            </div>
+          </div>
+          <div className="contact-bottom-card">
+            <h1>Get connected with us</h1>
+            <div className="contacr-icons">
+              <FaWhatsappSquare />
+              <FaFacebook />
+              <FaTwitter />
+              <FaInstagramSquare />
+            </div>
+            <button className="contact-link-bottom-card">Get connected</button>
           </div>
         </div>
       </div>

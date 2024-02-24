@@ -17,8 +17,11 @@ const Signup = () => {
   return (
     <div className="signup-container">
       <div className="signup-left">
-        <h1>Join<br/> Our <br/><span>Community!</span></h1>
-        <p>Get exclusive access to our features by signing up today.</p>
+        <div className="signup-left-content">
+          <h1 className="Signup-left-header">Join Our</h1>
+          <span>Community!</span>
+          <p>Get exclusive access to our features by signing up today.</p>
+        </div>
       </div>
       <div className="signup-form-container">
         <form onSubmit={handleSubmit} className="signup-form">
@@ -77,7 +80,12 @@ const Signup = () => {
             <button className="signup-btn" type="submit">
               <strong>Submit</strong>
             </button>
-            <p>Already have an account? <Link to="/routeTo/login"><span>Login</span></Link></p>
+            <p>
+              Already have an account?{" "}
+              <Link to="/routeTo/login">
+                <span>Login</span>
+              </Link>
+            </p>
           </div>
         </form>
       </div>

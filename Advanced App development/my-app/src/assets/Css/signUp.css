@@ -4,18 +4,45 @@
   width: 100%;
   height: 100vh;
 }
+
 .signup-left{
   flex: 1;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  background-color: #adb5bd;
+  /* align-items: center; */
+  justify-content: space-around;
+  /* background-image: url("D:\advanced-app-development\Advanced App development\my-app\src\assets\Images\Screenshot 2024-02-23 193730.png"); */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
   gap: 20px;
 }
-.signup-left h1{
+.Signup-left-header{
   margin-left: 20px;
-  font-size: 50px;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 102px;
+  font-weight: bold;
+  color: #000000;
+  /* text-align: center; */
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 20px;
+}
+.signup-left span{
+  margin-left: 20px;
+  color: orangered;
+  font-size: 100px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-weight: bold;
+}
+.signup-left p{
+  margin-left: 20px;
+  color: orangered;
+  font-size: 16px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-weight: bold;
 }
 .signup-form-container {
   flex: 1;
