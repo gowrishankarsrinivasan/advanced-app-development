@@ -17,6 +17,44 @@ const Profile = () => {
 
   return (
     <div className="profile-container">
+      <div className="profile-left-container">
+        <div className="profile-user-info">
+          <h1>USER INFORMATION</h1>
+          <div className="profile-container-input-container">
+            <div>
+              <label>user name</label>
+              <input placeholder="UserName" />
+              <input />
+            </div>
+          </div>
+          <div className="profile-container-input-container">
+            <input />
+            <input />
+          </div>
+          <div className="profile-container-input-container">
+            <input />
+            <input />
+          </div>
+        </div>
+        <div className="profile-address-info">
+          <h1>CONTACT INFORMATION</h1>
+          <div className="profile-container-input-container">
+            <input />
+          </div>
+          <div className="profile-container-input-container">
+            <input />
+          </div>
+          <div className="profile-container-input-container">
+            <input />
+            <input />
+            <input />
+          </div>
+          <div className="profile-about-container">
+            <label>About Me</label>
+            <textarea />
+          </div>
+        </div>
+      </div>
       <div className="profile-card">
         <div className="gradient-container">
           <FaArrowLeft
@@ -35,9 +73,8 @@ const Profile = () => {
         <div
           className="profile-content"
           style={{
-            backgroundColor: "#f85525",
             height: "350px",
-            color: "white",
+            color: "black",
           }}
         >
           <div className="profile-image">
@@ -65,20 +102,26 @@ const Profile = () => {
             </div>
             <div className="info-row">
               <p>Role</p>
-              <div className="info-row-data"><p>: {userData.Role}</p></div>
+              <div className="info-row-data">
+                <p>: {userData.Role}</p>
+              </div>
             </div>
             <div className="info-row">
               <p>Email</p>
-              <div className="info-row-data"><p>: {userData.Email_Address}</p></div>
+              <div className="info-row-data">
+                <p>: {userData.Email_Address}</p>
+              </div>
             </div>
             <div className="info-row">
               <p>Phone</p>
-              <div className="info-row-data"><p>: {userData.Phone_Number}</p></div>
+              <div className="info-row-data">
+                <p>: {userData.Phone_Number}</p>
+              </div>
             </div>
           </div>
         </div>
         <div className="profile-bottom">
-          <button className="profile-bottom-btn">Logout</button>
+          <button className="profile-bottom-btn">Update</button>
         </div>
       </div>
     </div>

@@ -8,7 +8,8 @@ import img from "/src/assets/Images/Logo.png";
 import { CgProfile } from "react-icons/cg";
 import { useNavigate } from "react-router-dom";
 import { RiMenuFoldLine } from "react-icons/ri";
-
+import { SiGooglebigquery } from "react-icons/si";
+import { IoMdLogOut } from "react-icons/io";
 const Navbar = () => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
   const [isProfileDropdownOpen, setIsProfileDropdownOpen] = useState(false);
@@ -61,18 +62,17 @@ const Navbar = () => {
           <Link to="/user/home">Home</Link>
         </li>
         <li>
-          <a href="#">About</a>
+          <Link to="/user/courseList" href="#">
+            Courses
+          </Link>
         </li>
         <li>
-          <a href="#">Services</a>
-        </li>
-        <li>
-          <a href="#">Contact</a>
+          <a href="#">Enquiry</a>
         </li>
       </ul>
       <div className="navbar-right">
-        <div ref={profileDropdownRef}>
-          <CgProfile className="profile-icon" onClick={toggleProfileDropdown} />
+        <div className="profile-icon" ref={profileDropdownRef}>
+          <CgProfile onClick={toggleProfileDropdown} />
           {isProfileDropdownOpen && (
             <div className="profile-dropdown">
               <button onClick={handleProfile} className="nav-logout-button">
@@ -86,14 +86,19 @@ const Navbar = () => {
         </div>
       </div>
       <div className={`sidebar ${isSidebarOpen ? "open" : ""}`}>
-        <button className="close-sidebar" onClick={toggleSidebar}>
-          <RiMenuFoldLine className="nav-menu" />
-        </button>
+        <div className="sidebar-top">
+          <button className="close-sidebar" onClick={toggleSidebar}>
+            <RiMenuFoldLine className="nav-menu" />
+          </button>
+        </div>
         <div className="sidebar-profile">
           <Link to="/user/profile">
             <img className="sidebar-items-img" src={img} />
           </Link>
-          <p className="profile-name">Profile name</p>
+          <div className="profile-name-container">
+            <h4>Gowri shanar</h4>
+            <p>Gowri@gmail.com</p>
+          </div>
         </div>
         <div className="sidebar-content">
           <div className="sidebar-items">
@@ -109,12 +114,12 @@ const Navbar = () => {
             <Link to="/user/courseList">Add Course</Link>
           </div>
           <div className="sidebar-items">
-            <IoMdHome />
-            <Link to="/product">About us</Link>
+          <SiGooglebigquery />
+            <Link to="/product">Enquiry</Link>
           </div>
           <div className="sidebar-items">
-            <IoMdHome />
-            <Link to="/product">Contact</Link>
+          <IoMdLogOut />
+            <Link to="/product">Log out</Link>
           </div>
         </div>
       </div>

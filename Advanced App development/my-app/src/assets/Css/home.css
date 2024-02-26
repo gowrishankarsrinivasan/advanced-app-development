@@ -264,6 +264,7 @@
   justify-content: center;
   align-items: center;
   background-color: #ced4da; /* Change the background color as needed */
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 
 .about-container-wrapper {
@@ -302,7 +303,6 @@
 }
 
 .contact-container {
-  
   height: 80vh;
   width: 100%;
   padding: 20px;
@@ -331,7 +331,7 @@
   font-weight: 700;
   font-style: normal;
 }
-.contact-head-wrapper p{
+.contact-head-wrapper p {
   font-family: "Protest Riot", sans-serif;
   font-weight: 400;
   font-style: normal;
@@ -353,6 +353,7 @@
   display: flex;
   gap: 10px;
   justify-content: space-around;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 
 .contact-bottom-card {
@@ -362,13 +363,14 @@
   background-color: white;
   transition: box-shadow 1s ease-in-out;
   width: 35%;
-  box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px,
+    rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-evenly;
 }
-.contact-bottom-card-wrapper{
+.contact-bottom-card-wrapper {
   display: flex;
   gap: 30px;
   flex-direction: column;
@@ -376,8 +378,9 @@
   justify-content: space-between;
   /* text-align: center; */
 }
-.contact-bottom-card:hover{
-  box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
+.contact-bottom-card:hover {
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px,
+    rgba(0, 0, 0, 0.22) 0px 10px 10px;
 }
 .contact-bottom-card-wrapper p {
   font-family: Arial, sans-serif;
@@ -387,9 +390,6 @@
   padding: 10px;
   border-radius: 5px;
 }
-
-
-
 
 /* CSS */
 .contact-link-bottom-card {
@@ -410,23 +410,30 @@
 
 .contact-link-bottom-card {
   touch-action: manipulation;
-  background-image: linear-gradient(135deg, color(display-p3 .572549 .415686 1) 0%, color(display-p3 1 .466667 .690196) 50%, color(display-p3 1 .701961 .403922) 100%);
+  background-image: linear-gradient(
+    135deg,
+    color(display-p3 0.572549 0.415686 1) 0%,
+    color(display-p3 1 0.466667 0.690196) 50%,
+    color(display-p3 1 0.701961 0.403922) 100%
+  );
   border-radius: 8px;
   color: #fff;
-  font-feature-settings: "ss01", "cv10", "calt"0, "liga"0;
+  font-feature-settings: "ss01", "cv10", "calt" 0, "liga" 0;
   font-size: 16px;
   font-weight: 500;
   line-height: 24px;
   padding: 10px 20px;
   position: relative;
-  transition: transform .2s cubic-bezier(.6, .6, 0, 1), margin-top .2s cubic-bezier(.6, .6, 0, 1);
+  transition: transform 0.2s cubic-bezier(0.6, 0.6, 0, 1),
+    margin-top 0.2s cubic-bezier(0.6, 0.6, 0, 1);
   transition-behavior: normal, normal;
 }
 
 .contact-link-bottom-card::before {
   -webkit-mask-clip: content-box, initial;
   -webkit-mask-composite: xor;
-  -webkit-mask-image: linear-gradient(#fff 0, #fff 0), linear-gradient(#fff 0, #fff 0);
+  -webkit-mask-image: linear-gradient(#fff 0, #fff 0),
+    linear-gradient(#fff 0, #fff 0);
   -webkit-mask-origin: content-box, initial;
   -webkit-mask-position-x: initial, initial;
   -webkit-mask-position-y: initial, initial;
@@ -438,7 +445,7 @@
 
 .contact-link-bottom-card::before {
   background-color: initial;
-  background-image: linear-gradient(rgba(255, 255, 255, .32), transparent);
+  background-image: linear-gradient(rgba(255, 255, 255, 0.32), transparent);
   bottom: 0;
   pointer-events: none;
   right: 0;
@@ -454,9 +461,11 @@
 }
 
 .contact-link-bottom-card::after {
-  box-shadow: #000019 0 0, rgba(0, 0, 25, .3) 0 9px 21px, rgba(73, 2, 57, .2) 0 -3px inset;
+  box-shadow: #000019 0 0, rgba(0, 0, 25, 0.3) 0 9px 21px,
+    rgba(73, 2, 57, 0.2) 0 -3px inset;
   height: 100%;
-  transition: box-shadow .2s cubic-bezier(.6, .6, 0, 1), background-color .2s cubic-bezier(.6, .6, 0, 1);
+  transition: box-shadow 0.2s cubic-bezier(0.6, 0.6, 0, 1),
+    background-color 0.2s cubic-bezier(0.6, 0.6, 0, 1);
   transition-behavior: normal, normal;
   width: 100%;
   z-index: 1;
@@ -467,9 +476,34 @@
 }
 
 .contact-link-bottom-card:hover::after {
-  background-color: rgba(255, 255, 255, .1);
+  background-color: rgba(255, 255, 255, 0.1);
 }
 
 .contact-link-bottom-card::after {
-  box-shadow: #000019 0 0, rgba(0, 0, 25, .2) 0 9px 21px, rgba(73, 2, 57, .2) 0 0 inset;
+  box-shadow: #000019 0 0, rgba(0, 0, 25, 0.2) 0 9px 21px,
+    rgba(73, 2, 57, 0.2) 0 0 inset;
+}
+
+.about-container-card img {
+  width: 150px;
+  height: 150px;
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  border-radius: 50%;
+}
+.about-container-card img:hover {
+  width: 155px;
+  height: 155px;
+}
+.contact-icons {
+  width: 90%;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+.con-icon {
+  font-size: 54px;
+  padding: 5px;
 }

@@ -13,6 +13,10 @@ import c2 from "/src/assets/Images/home_img/c2.jpeg";
 import c3 from "/src/assets/Images/home_img/c3.jpeg";
 import c4 from "/src/assets/Images/home_img/c4.jpeg";
 import c5 from "/src/assets/Images/home_img/c5.jpeg";
+
+import p1 from "/src/assets/Images/home/p1.jpg";
+import p2 from "/src/assets/Images/home/p2.jpg";
+import p3 from "/src/assets/Images/home/p3.jpg";
 import { FaChevronDown } from "react-icons/fa";
 const Homepage = () => {
   const [isScrolled, setisScrolled] = useState(false);
@@ -173,9 +177,15 @@ const Homepage = () => {
             </p>
           </div>
           <div className="about-container-body">
-            <div className="about-container-card"></div>
-            <div className="about-container-card"></div>
-            <div className="about-container-card"></div>
+            <div className="about-container-card">
+              <img src={p1} />
+            </div>
+            <div className="about-container-card">
+              <img src={p2} />
+            </div>
+            <div className="about-container-card">
+              <img src={p3} />
+            </div>
           </div>
         </div>
       </div>
@@ -207,11 +217,11 @@ const Homepage = () => {
           </div>
           <div className="contact-bottom-card">
             <h1>Get connected with us</h1>
-            <div className="contacr-icons">
-              <FaWhatsappSquare />
-              <FaFacebook />
-              <FaTwitter />
-              <FaInstagramSquare />
+            <div className="contact-icons">
+              <FaWhatsappSquare className="con-icon" />
+              <FaFacebook className="con-icon" />
+              <FaTwitter className="con-icon" />
+              <FaInstagramSquare className="con-icon" />
             </div>
             <button className="contact-link-bottom-card">Get connected</button>
           </div>

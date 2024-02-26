@@ -1,0 +1,173 @@
+/* Enquiry Form Styles */
+.enquiry-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  place-items: center;
+  height: 90vh;
+  width: 100%;
+}
+.enquiry-left {
+  height: 100%;
+  width: 50%;
+  background-image: url("D:\advanced-app-development\Advanced App development\my-app\src\assets\Images\enquiry.jpg");
+  background-position: center;
+  background-size: contain;
+}
+.enquiry-right{
+    width: 50%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.enquiry-form {
+  width: 400px;
+  height: 80vh;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+.form-group{
+    margin-top: 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.enquiry-form h2 {
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.enquery-input-field {
+  width: 100%;
+  padding: 10px;
+  border: none;
+  border-bottom: 2px solid #ccc;
+  background-color: transparent;
+  transition: border-bottom-color 0.3s;
+}
+.enquery-input-field:focus {
+    outline: none;
+    border-bottom-color: #007bff; /* Change to your primary color */
+  }
+  
+.input-label {
+    padding: 5px;
+    color: #888;
+    pointer-events: none;
+    transition: top 0.3s, padding 0.3s, color 0.3s;
+  }
+  
+  .enquery-input-field:focus + .input-label,
+  .input-group input:not(:placeholder-shown) + label {
+    top: -15px;
+    padding: 0 10px;
+    font-size: 12px;
+    color: #007bff; /* Change to your primary color */
+  }
+
+  .input-select {
+    margin-top: 15px;
+    margin-bottom: 15px;
+    width: 100%;
+    /* padding: 20px; */
+    border: none;
+    border-bottom: 2px solid #ccc;
+    background-color: transparent;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    cursor: pointer;
+    transition: border-bottom-color 0.3s;
+  }
+  
+  .input-select:focus {
+    outline: none;
+    border-bottom-color: #007bff; /* Change to your primary color */
+  }
+  
+  
+  .input-select:focus + .input-label,
+  .input-select:not(:placeholder-shown) + .input-label {
+    top: -15px;
+    padding: 0 10px;
+    font-size: 12px;
+    color: #007bff; /* Change to your primary color */
+  }
+
+
+  /* Textarea Styles */
+.textarea-group {
+    position: relative;
+    margin-bottom: 30px;
+  }
+  
+  .textarea-field {
+    width: 100%;
+    height: 60px;
+    padding: 10px;
+    border: none;
+    border-bottom: 2px solid #ccc;
+    background-color: transparent;
+    transition: border-bottom-color 0.3s;
+    resize: vertical; /* Allow vertical resizing */
+  }
+  
+  .textarea-field:focus {
+    outline: none;
+    border-bottom-color: #007bff; /* Change to your primary color */
+  }
+  
+  
+  .textarea-field:focus,
+  .textarea-field:not(:placeholder-shown) + .textarea-label {
+    top: -15px;
+    padding: 0 10px;
+    font-size: 12px;
+    color: #007bff; /* Change to your primary color */
+  }
+  
+
+.enquiry-form button {
+  width: 100%;
+  padding: 10px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.enquiry-form button:hover {
+  background-color: #0056b3;
+}
+
+.enquiry-form button:focus {
+  outline: none;
+}
+
+/* Responsive Styles */
+@media screen and (max-width: 600px) {
+  .enquiry-form {
+    width: 80%;
+  }
+}
+
+
+.enquiry-form-items{
+    padding-top: 30px;
+}
+
+.enquiry-form-message{
+    display: flex;
+    flex-direction: column;
+
+}
+
+.form-querry-button{
+    position: relative;
+    top: 20px;
+}

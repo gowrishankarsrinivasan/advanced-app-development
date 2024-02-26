@@ -1,20 +1,49 @@
 /* Profile.css */
-@import url('https://fonts.googleapis.com/css?family=Josefin+Sans:200,400,600&display=swap');
+@import url("https://fonts.googleapis.com/css?family=Josefin+Sans:200,400,600&display=swap");
 
 /* Container for the entire profile */
 .profile-container {
-  background-color: #253237;
   height: 100vh;
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
   align-items: center;
-  
+}
+
+.profile-left-container {
+  width: 700px;
+  /* height: 600px; */
+}
+
+.profile-general {  
+  /* height: 50%; */
+  background-color: aqua;
+  /* margin-top: 20px; */
+}
+
+.profile-container-input-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  margin-top: 10px;
+}
+
+.profile-container-input-container input {
+  width: 45%; /* Adjust width as needed */
+  padding: 16px;
+  margin-top: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+.profile-address-container{
+  height: 50%;
+  background-color: rgb(25, 255, 178);
 }
 
 .profile-card {
   width: 400px;
   height: 600px;
-  box-shadow: 0px 0px 5px rgba(0,0,0,1);
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 1);
   border-radius: 4px;
   overflow: hidden; /* Ensure that the gradient doesn't overflow */
   transition: box-shadow 0.5s ease-in-out;
@@ -26,7 +55,7 @@
 }
 
 .gradient-container {
-  background-color: aliceblue ;
+  background-color: rgb(193, 226, 255);
   display: flex;
   justify-content: space-between;
   /* background-image: url("D:\task-manager-app\src\base-apperal-comming-soon\img\ian-stauffer-bH7kZ0yazB0-unsplash.jpg"); */
@@ -36,7 +65,6 @@
   height: 150px;
   /* border-radius: 4px 4px 0 0;   */
 }
-
 
 .profile-image {
   display: flex;
@@ -53,13 +81,13 @@
   background-color: white;
 }
 
-
 /* Add this to your existing CSS file or create a new one */
-.navbar-right button{
+.navbar-right button {
   background-color: transparent;
   border: none;
   color: white;
-}.profile-info {
+}
+.profile-info {
   display: flex;
   flex-direction: column;
   margin-left: 50px;
@@ -75,7 +103,7 @@
 
 .info-row p {
   margin: 0;
-  font-family: 'Josefin Sans', sans-serif;
+  font-family: "Josefin Sans", sans-serif;
 }
 
 .info-row-data {
@@ -89,9 +117,8 @@
   word-wrap: break-word; /* Allow long words to break and wrap */
 }
 
-
 .profile-bottom {
-  background-color: aliceblue;
+  background-color: rgb(193, 226, 255);
   height: 100px;
   display: flex;
   align-items: center;
@@ -100,18 +127,16 @@
 .profile-bottom-btn {
   height: 40px;
   width: 50%;
-  border-radius: 20px;
+  border-radius: 5px;
   border: none;
   background-color: orangered;
   transition: background-color 0.6s ease-in-out;
 }
-.profile-bottom-btn:hover{
+.profile-bottom-btn:hover {
   background-color: red;
 }
 
 /* Add more styling as needed */
-
-
 
 @keyframes slideInFromLeft {
   0% {

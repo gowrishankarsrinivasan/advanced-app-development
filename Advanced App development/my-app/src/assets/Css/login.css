@@ -1,12 +1,19 @@
 /* login.css */
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=Protest+Revolution&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap");
+
 .login-container {
   display: flex;
   width: 100%;
   height: 100vh;
+  font-family: "Rubik", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
 }
 
 .left-half {
-  background-image: url("D:\advanced-app-development\Advanced App development\my-app\src\assets\Images\login.png");
+  background-image: url("D:\advanced-app-development\Advanced App development\my-app\src\assets\Images\signIn.jpg");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -16,30 +23,33 @@
   justify-content: center;
   align-items: center;
 }
+
 .left-half-header {
   font-size: 80px;
   color: orangered;
 }
+
 .left-half-content {
   font-size: 24px;
   color: black;
 }
 
-
-
 .right-half {
- flex: 1;
+  flex: 1;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-
 }
 
 .login-header {
+  font-family: "Roboto Mono", monospace;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
   position: relative;
-  bottom: 30px;
-  font-size: 25px;
+  font-size: 24px;
+  bottom: 20px;
   text-align: center;
   margin-bottom: 50px;
   color: black;
@@ -56,114 +66,127 @@
 }
 
 .react-icons {
-  font-size: 50px; /* Adjust the font size as needed */
-  margin: 0 10px; /* Add space between icons */
-  border-radius: 50%; /* Make the icon round */
-  padding: 14px; /* Add padding to increase clickable area */
-  transition: background-color 0.3s ease, color 0.3s ease; /* Add smooth transition for background color and text color */
+  font-size: 50px;
+  margin: 0 10px;
+  border-radius: 50%;
+  padding: 14px;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .react-icons:hover {
-  background-color: #000000; /* Change background color on hover */
+  background-color: #000000;
 }
 
-/* Specific styles for each icon */
 .react-icons:nth-child(1) {
-  /* Facebook icon */
-  color: #3b5998; /* Facebook blue */
+  color: #3b5998;
 }
 
 .react-icons:nth-child(2) {
-  /* LinkedIn icon */
-  color: #0077b5; /* LinkedIn blue */
+  color: #0077b5;
 }
 
 .react-icons:nth-child(3) {
-  /* Mail icon */
-  color: #ea4335; /* Gmail red */
+  color: #ea4335;
 }
 
 .right-half-form-container {
-  width: 400px;
-  height: 300px;
-  margin-bottom: 20px;
+  /* width: 400px; */
+  /* height: 300px; */
+  /* margin-bottom: 20px; */
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-}
-.login-form{
-
-}
-
-.input-field {
-  position: relative;
-  display: flex;
-  align-items: center;
-  background-color: #ccc;
-  margin-bottom: 50px;
-  width: 300px;
-  border-radius: 16px;
-
-  /* padding: 6px 6px; */
 }
 
 .material-icons {
   font-size: 33px;
 }
 
-/* .input-field i {
-  position: absolute;
-  left: 10px;
-  top: 50%;
-  transform: translateY(-50%);
-  color: #ccc;
-} */
-
-.input-field input {
-  background-color: #ccc;
-  border-radius: 16px;
-  /* padding-left: 35px; */
-  width: calc(100% - 35px);
-  border: 1px solid #ccc;
-  /* border: none; */
-  padding: 14px;
-  transition: border-color 0.3s ease; /* Add smooth transition */
+.login-form {
+  /* height: 400px; */
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
 }
 
-.input-field-inputs:focus {
+.input-field {
+  position: relative;
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+  width: 90%;
+  max-width: 400px;
+}
+
+.input-field input {
+  background-color: #f8f9fa;
+  border: 1px solid #dfe1e5;
+  width: 100%;
+  padding: 10px 15px;
+  border-radius: 8px;
+  transition: border-color 0.3s ease;
+}
+
+.input-field input::placeholder {
+  color: #757575;
+}
+
+.input-field input:focus {
   outline: none;
+  border-color: #4285f4;
+}
+
+.input-field input:focus::placeholder {
+  color: transparent;
+}
+
+.form-bottombar{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 .login-btn {
-  margin-left: 60px;
-  background-color: orangered;
-  color: white;
-  padding: 16px 70px;
+  width: 90%;
+  padding: 12px;
   border: none;
-  border-radius: 24px;
+  border-radius: 8px;
+  background-color: orangered;
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: bold;
   cursor: pointer;
-  transition: background-color 0.3s ease; /* Add smooth transition */
+  transition: background-color 0.3s ease;
 }
 
 .login-btn:hover {
-  background-color: #fa0808; /* Change background color on hover */
+  background-color:orange;
 }
 
-.forgot-password {
-  position: relative;
-  font-weight: bold;
-  bottom: 35px;
+.login-link {
+  padding-bottom: 20px;
   font-size: 16px;
   text-align: center;
-}
-
-.forgot-password a {
   text-decoration: none;
   color: #000000;
-  transition: color 0.3s ease; /* Add smooth transition */
+  transition: color 0.3s ease;
 }
 
-.forgot-password a:hover {
-  color: #f60000; /* Change color on hover */
+
+.login-link:hover {
+  color: #f60000;
+}
+
+.login-p {
+  color: #000000;
+  margin-right: 20px;
+}
+
+.login-link span{
+  font-size: 20px;
 }

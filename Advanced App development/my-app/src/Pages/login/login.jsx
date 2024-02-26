@@ -1,31 +1,62 @@
-import React,{useState} from "react";
+import React, { useState } from "react";
 import "/src/assets/Css/login.css"; // Import CSS for styling
 import { FaLinkedinIn } from "react-icons/fa";
 import { FaFacebook } from "react-icons/fa";
 import { IoMdMail } from "react-icons/io";
-import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
+import { toast, ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+
 const Login = () => {
-  const [email,setEmail] = useState('');
-  const [password,setPassword] = useState('');
-  const handleSubmit = ()=>{
-    if(email.includes('@admin.in')){
-      nav("/user/home");
-    }else{
-      nav("/routeTo/signUp");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+
+  
+  const handleSubmit = (e) => {
+    e.preventDefault();
+  
+    const storedUserData = localStorage.getItem("user");
+    let data = null;
+  
+    if(email.trim() ==="" && password.trim() === "" ){
+      toast.warn("Please enter email and password");
     }
-  }
-  const nav = useNavigate();
-  const singin = () => {
-    nav("/routeTo/signUp");
+    if (storedUserData) {
+      data = JSON.parse(storedUserData);
+    }
+    console.log("Data from localStorage:", data); // Add this line for debugging
+  
+    let match = false;
+  
+    // Check if data exists and email/password match
+    if (data && data.email === email && data.password === password) {
+      match = true;
+    }
+  
+    if (match) {
+      toast.success("Logged in successfully");
+      console.log("User logged");
+    } else if(email.trim()!=="" && password.trim()!=="" && !match) {
+      toast.error("User not found");
+      setEmail("");
+      setPassword("");
+    }
   };
+  
+  
+
+  // Clear error message when user starts typing
+  const handleEmailChange = (e) => {
+    setEmail(e.target.value);
+  };
+
+  const handlePasswordChange = (e) => {
+    setPassword(e.target.value);
+  };
+
   return (
     <div className="login-container">
-      <div className="left-half">
-        <h1 className="left-half-header">Welcome Back!</h1>
-        <p className="left-half-content">To Keep Contactedd with us please</p>
-        <p className="left-half-content">Login with your personal info</p>
-      </div>
+      <div className="left-half"></div>
       <div className="right-half">
         <header className="login-header">
           <h2>
@@ -40,50 +71,50 @@ const Login = () => {
         <div className="right-half-form-container">
           <form className="login-form" onSubmit={handleSubmit}>
             <div className="input-field">
-              <i className="material-icons" style={{ paddingLeft: "10px" }}>
-                person
-              </i>
               <input
                 className="input-field-inputs"
                 type="email"
                 value={email}
-                onChange={(e)=>setEmail(e.target.value)}
+                onChange={handleEmailChange} // Use handleEmailChange to track changes and clear error
                 placeholder="Email"
               />
             </div>
             <div className="input-field">
-              <i className="material-icons">lock</i>
               <input
                 className="input-field-inputs"
                 type="password"
                 value={password}
-                onChange={(e)=>setPassword(e.target.value)}
+                onChange={handlePasswordChange} // Use handlePasswordChange to track changes and clear error
                 placeholder="Password"
               />
             </div>
-            <div className="forgot-password">
-              <a href="#">Forgot password?</a>
-            </div>
-            <button className="login-btn" type="submit" onClick={singin}>
-              Sign In
-            </button>
-            <p
-              style={{
-                position: "relative",
-                top: "20px",
-                marginLeft: "30px",
-                fontSize: "18px",
-                color: "white",
-              }}
-            >
-              Don't you have an account?
-              <Link to="/routeTo/signUp">
-                <span>Register</span>
+            <div className="form-bottombar">
+              <Link to="#" className="login-link">
+                Forgot password?
               </Link>
-            </p>
+
+              <button className="login-btn" type="submit">
+                Sign In
+              </button>
+              <p
+                className="login-p"
+                style={{
+                  position: "relative",
+                  top: "20px",
+                  marginLeft: "30px",
+                  fontSize: "18px",
+                }}
+              >
+                Don't you have an account?
+                <Link to="/routeTo/signUp" className="login-link">
+                  <span>Register</span>
+                </Link>
+              </p>
+            </div>
           </form>
         </div>
       </div>
+      <ToastContainer />
     </div>
   );
 };
