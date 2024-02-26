@@ -67,7 +67,7 @@ const Navbar = () => {
           </Link>
         </li>
         <li>
-          <a href="#">Enquiry</a>
+          <Link to="/user/query">Enquiry</Link>
         </li>
       </ul>
       <div className="navbar-right">
