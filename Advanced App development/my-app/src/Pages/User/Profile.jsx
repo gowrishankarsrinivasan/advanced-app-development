@@ -17,7 +17,74 @@ const Profile = () => {
 
   return (
     <div className="profile-container">
+      <div className="profile-left">
+        <div className="profile-header-info">
+          <h1>My Account</h1>
+          <button>Settings</button>
+        </div>
+        <div className="profile-info-container-wrapper">
+        <p>User info</p>
+        <div className="profile-info-container">
+            <div className="profile-info1">
+              <div className="profile-info-row">
+                <div className="profile-info-input-container">
+                  <label className="profile-left-label">First name</label>
+                  <input placeholder="Gowri shankar"/>
+                </div>
+              </div>
+              <div className="profile-info-row">
+                <div className="profile-info-input-container">
+                  <label className="profile-left-label">Last name</label>
+                  <input placeholder="S"/>
+                </div>
+              </div>
+            </div>
+            <div className="profile-info1">
+              <div className="profile-info-row">
+                <div className="profile-info-input-container">
+                  <label className="profile-left-label">User name</label>
+                  <input placeholder="gowri@"/>
+                </div>
+              </div>
+              <div className="profile-info-row">
+                <div className="profile-info-input-container">
+                  <label className="profile-left-label">Email address</label>
+                  <input placeholder="abc@gmail.com"/>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <p>Contact information</p>
+        <div className="profile-contact-wrapper">
+          <div className="profile-contact-container">
+            <div className="profile-contact-row1">
+              <label className="pro-con-label">Address</label>
+              <input type="text" className="pro-con-input"></input>
+            </div>
 
+            <div className="profile-contact-row2">
+              <div className="profile-contact-row2-items">
+                <label className="pro-con-label">State</label>
+                <input type="text" placeholder="Tamil nadu" className="pro-con-input"></input>
+              </div>
+              <div className="profile-contact-row2-items">
+                <label className="pro-con-label">City</label>
+                <input type="text" placeholder="Coimbatore" className="pro-con-input"></input>
+              </div>
+              <div className="profile-contact-row2-items">
+                <label className="pro-con-label">Postal code</label>
+                <input type="text" placeholder="Postal code" className="pro-con-input"></input>
+              </div>
+            </div>
+          </div>
+        </div>
+        <p>About me</p>
+        <div className="profile-left-about-container">
+          <p>About me</p>
+          <textarea></textarea>
+        </div>
+      </div>
       <div className="profile-card">
         <div className="gradient-container">
           <FaArrowLeft
