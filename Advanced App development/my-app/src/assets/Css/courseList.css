@@ -1,64 +1,65 @@
 @import url("https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=Protest+Revolution&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap");
 
 .course_container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
-    padding: 10px;
-  }
-  
-  .box {
-    width: 500px;
-    margin: 20px;
-    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
-    transition: box-shadow 0.5s ease-in-out;
-  }
-  
-  .box-content {
-    display: flex;
-    height: 100%;
-  }
-  
-  .box:hover{
-    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-  }
-  .image-box {
-    width: 50%;
-  }
-  
-  .course-image {
-    height: 100%;
-    width: 100%;
-    object-fit: cover;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  padding: 10px;
+}
 
-  }
-  
-  .image-box-details {
-    width: 50%;
-    padding: 20px;
-    display: flex;
-    align-items: center;
-  }
-  .image-box-details h3{
-    font-family: "Rubik", sans-serif;
-    font-optical-sizing: auto;
-    font-weight: 500;
-    font-style: normal;
-    padding-bottom: 10px;
-  }
-  
-  .enroll-button {
-    background-color: orangered;
-    color: #fff;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 16px;
-    margin-top: 10px;
-  }
-  
-  .enroll-button:hover {
-    background-color: red;
-  }
-  
+.box {
+  width: 500px;
+  margin: 20px;
+  box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+  transition: box-shadow 0.5s ease-in-out;
+}
+
+.box-content {
+  display: flex;
+
+  height: 100%;
+}
+
+.box:hover {
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.image-box {
+  width: 50%;
+}
+
+.course-image {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
+.image-box-details {
+  width: 50%;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+}
+
+.image-box-details h3 {
+  font-family: "Rubik", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: normal;
+  padding-bottom: 10px;
+}
+
+.enroll-button {
+  background-color: orangered;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  margin-top: 10px;
+}
+
+.enroll-button:hover {
+  background-color: red;
+}

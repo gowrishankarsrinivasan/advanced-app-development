@@ -9,9 +9,10 @@ const LazyLogin = lazy(() => import("./Pages/login/login"));
 const LazysignUp = lazy(() => import("./Pages/login/signUp"));
 const LazyHome = lazy(() => import("./Pages/User/homepage"));
 const LazyProfile = lazy(() => import("./Pages/User/Profile"));
+
 const LazyCourseListing = lazy(() => import("./Pages/User/Course"));
-const LazyDash = lazy(()=> import("./Pages/Admin/dash"));
-const LazyQuery = lazy(()=> import('./Pages/User/enquiry'));
+const LazyDash = lazy(() => import("./Pages/Admin/dash"));
+const LazyQuery = lazy(() => import("./Pages/User/enquiry"));
 const UserRoutes = () => {
   return (
     <UserLayout>
@@ -21,6 +22,7 @@ const UserRoutes = () => {
           path="/courseList"
           element={<LazyLayout component={LazyCourseListing} />}
         />
+
         <Route
           path="/profile"
           element={<LazyLayout component={LazyProfile} />}
@@ -29,10 +31,7 @@ const UserRoutes = () => {
           path="/dashboard"
           element={<LazyLayout component={LazyDash} />}
         />
-        <Route
-          path="/query"
-          element={<LazyLayout component={LazyQuery} />}
-        />
+        <Route path="/query" element={<LazyLayout component={LazyQuery} />} />
       </Routes>
     </UserLayout>
   );
