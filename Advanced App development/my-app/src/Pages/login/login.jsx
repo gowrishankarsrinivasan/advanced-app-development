@@ -11,39 +11,36 @@ const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
-  
   const handleSubmit = (e) => {
     e.preventDefault();
-  
+
     const storedUserData = localStorage.getItem("user");
     let data = null;
-  
-    if(email.trim() ==="" && password.trim() === "" ){
+
+    if (email.trim() === "" && password.trim() === "") {
       toast.warn("Please enter email and password");
     }
     if (storedUserData) {
       data = JSON.parse(storedUserData);
     }
     console.log("Data from localStorage:", data); // Add this line for debugging
-  
+
     let match = false;
-  
+
     // Check if data exists and email/password match
     if (data && data.email === email && data.password === password) {
       match = true;
     }
-  
+
     if (match) {
       toast.success("Logged in successfully");
       console.log("User logged");
-    } else if(email.trim()!=="" && password.trim()!=="" && !match) {
+    } else if (email.trim() !== "" && password.trim() !== "" && !match) {
       toast.error("User not found");
       setEmail("");
       setPassword("");
     }
   };
-  
-  
 
   // Clear error message when user starts typing
   const handleEmailChange = (e) => {
