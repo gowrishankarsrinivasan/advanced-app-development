@@ -17,37 +17,56 @@ import c5 from "/src/assets/Images/home_img/c5.jpeg";
 import p1 from "/src/assets/Images/home/p1.jpg";
 import p2 from "/src/assets/Images/home/p2.jpg";
 import p3 from "/src/assets/Images/home/p3.jpg";
-import { FaChevronDown } from "react-icons/fa";
+// import { FaChevronDown } from "react-icons/fa";
 const Homepage = () => {
-  const [isScrolled, setisScrolled] = useState(false);
-  const ref = useRef(null);
-  const handleScroll = () => {
-    window.scrollTo({
-      top: ref.current.offsetTop,
-      behavior: "smooth",
-    });
-    setIsScrolled(true);
-    setTimeout(() => {
-      window.scrollTo({
-        top: 0,
-        behavior: "smooth",
-      });
-      setIsScrolled(false);
-    }, 4000);
-  };
+  // const [isScrolled, setisScrolled] = useState(false);
+  // const ref = useRef(null);
+  // const handleScroll = () => {
+  //   window.scrollTo({
+  //     top: ref.current.offsetTop,
+  //     behavior: "smooth",
+  //   });
+  //   setIsScrolled(true);
+  //   setTimeout(() => {
+  //     window.scrollTo({
+  //       top: 0,
+  //       behavior: "smooth",
+  //     });
+  //     setIsScrolled(false);
+  //   }, 4000);
+  // };
   return (
     <div className="home-container">
       <div className="home-container-top">
-        <h2 className="protest-revolution-regular">Welcome to our page!</h2>
-        <h1 className="home-h1">IT'S NICE TO MEET YOU</h1>
-        <button className="home-button">GET STARTED</button>
-        <div
-          className="home-down-arrow"
-          onClick={handleScroll}
-          style={{ display: isScrolled ? "none" : "block" }}
-        />
+        <div className="home-container-top-wrapper">
+          <div className="home-container-top-wrapper-left">
+            <h1>Welcome to the BEC Enquiry Management System</h1>
+            <p>
+              The BEC Enquiry Management System (EMS) is transforming the way
+              candidates engage with our certification program. Our
+              user-friendly platform simplifies the process of submitting
+              enquiries, provides comprehensive information on the BEC
+              certification program, and streamlines the registration process.
+            </p>
+            <p>
+              With real-time responses from our dedicated support staff,
+              communication gaps are bridged, ensuring that candidates receive
+              timely and accurate information. Our innovative system is designed
+              to enhance the candidate experience, alleviating frustration and
+              empowering informed decision-making.
+            </p>
+          </div>
+          <div className="home-container-top-wrapper-right"></div>
+        </div>
+        <div className="home-container-top-bottom-head">
+          <h1>We help people learn English and prove</h1>
+          <h1>their skills to the world</h1>
+        </div>
+        <button className="home-button">
+          <span>GET STARTED</span>
+        </button>
       </div>
-      <div className="card-container" ref={ref}>
+      <div className="card-container">
         {/* First card */}
         <div className="card">
           <h3>Support for learners</h3>

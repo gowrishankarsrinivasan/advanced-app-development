@@ -1,0 +1,58 @@
+.form-wrapper {
+  height: 90vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+.form-container-img {
+  width: 50%;
+  height: 90vh;
+  background-image: url("D:\advanced-app-development\Advanced App development\my-app\src\assets\Images\coursesImages\courseForm.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+.form-container {
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.form-container-header {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group-label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.form-group-input[type="text"],
+.form-group-input[type="file"] {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+.form-group-btn {
+  background-color: #4caf50;
+  color: white;
+  width: 100%;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+button:hover {
+  background-color: #45a049;
+}

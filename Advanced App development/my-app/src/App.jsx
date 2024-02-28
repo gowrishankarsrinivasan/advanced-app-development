@@ -13,6 +13,8 @@ const LazyProfile = lazy(() => import("./Pages/User/Profile"));
 const LazyCourseListing = lazy(() => import("./Pages/User/Course"));
 const LazyDash = lazy(() => import("./Pages/Admin/dash"));
 const LazyQuery = lazy(() => import("./Pages/User/enquiry"));
+const lazyAdminCourseForm = lazy(() => import("./Pages/Admin/courseForm"));
+const lazyPaymentPage = lazy(() => import("./Pages/User/payment"));
 const UserRoutes = () => {
   return (
     <UserLayout>
@@ -32,6 +34,14 @@ const UserRoutes = () => {
           element={<LazyLayout component={LazyDash} />}
         />
         <Route path="/query" element={<LazyLayout component={LazyQuery} />} />
+        <Route
+          path="/courseform"
+          element={<LazyLayout component={lazyAdminCourseForm} />}
+        />
+        <Route
+          path="/payment"
+          element={<LazyLayout component={lazyPaymentPage} />}
+        />
       </Routes>
     </UserLayout>
   );

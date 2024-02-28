@@ -1,7 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=Protest+Revolution&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Protest+Riot&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap");
-@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap");
 /* Layer 1: Navbar styles */
 .navbar {
   height: 10vh;
@@ -9,8 +9,8 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #0466c8;
   padding: 10px 20px;
+  background-color: white;
   padding: 10px;
   box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
 }
@@ -43,7 +43,8 @@
 
 /* Layer 3: Styles for the span within the navbar brand */
 .navbar-left span {
-  color: orangered;
+  font-size: 28px;
+  color: #1b98e0;
 }
 
 /* Layer 4: Styles for the navbar center section */
@@ -65,19 +66,22 @@
 
 /* Layer 6: Styles for the links in the navbar center */
 .navbar-center li a {
+  font-family: "Rubik", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: normal;
   color: #0a0908;
   text-decoration: none;
   padding: 12px 20px;
-  font-family: "Protest Riot", sans-serif;
-  font-weight: 400;
-  font-style: normal;
   transition: box-shadow 300ms ease-in-out;
 }
 
 /* Layer 6: Hover styles for the links in the navbar center */
 .navbar-center li a:hover {
-  background-color: orangered;
-  box-shadow: 0 0 .25rem rgba(0, 0, 0, 0.5), -.125rem -.125rem 1rem rgba(239, 71, 101, 0.5), .125rem .125rem 1rem rgba(255, 154, 90, 0.5);
+  background-color: #1b98e0;
+  box-shadow: 0 0 0.25rem rgba(0, 0, 0, 0.5),
+    -0.125rem -0.125rem 1rem rgba(60, 108, 250, 0.5),
+    0.125rem 0.125rem 1rem rgba(2, 145, 234, 0.5);
 
   color: #fff;
   border: none;
@@ -97,12 +101,11 @@
 
 /* Layer 7: Hover styles for the profile icon */
 .profile-icon:hover {
-  color: orangered;
+  color: #1b98e0;
 }
 
 /* Layer 8: Styles for the sidebar */
 .sidebar {
-
   position: fixed;
   display: flex;
   flex-direction: column;
@@ -118,7 +121,7 @@
   overflow-y: auto;
   /* padding-top: 30px; */
 }
-.sidebar-top{
+.sidebar-top {
 }
 
 /* Layer 9: Styles for the open sidebar */
@@ -128,13 +131,13 @@
 
 /* Layer 10: Styles for the sidebar content */
 .sidebar-content {
-   /* padding: 40px;  */
-   width: 100%;
-   /* background-color: #00a6fb; */
-   left: 25px;
-   position: relative;
-   top: 20px;
- }
+  /* padding: 40px;  */
+  width: 100%;
+  /* background-color: #00a6fb; */
+  left: 25px;
+  position: relative;
+  top: 20px;
+}
 
 /* Layer 11: Styles for the sidebar items */
 .sidebar-items {
@@ -204,7 +207,7 @@
   width: 100px;
   border-radius: 50%;
 }
-.profile-name-container{
+.profile-name-container {
   text-align: center;
 }
 

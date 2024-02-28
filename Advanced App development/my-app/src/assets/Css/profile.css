@@ -1,5 +1,6 @@
 /* Profile.css */
 @import url("https://fonts.googleapis.com/css?family=Josefin+Sans:200,400,600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap");
 
 /* Container for the entire profile */
 .profile-container {
@@ -99,25 +100,26 @@
   width: 50%;
   border-radius: 5px;
   border: none;
-  background-color: orangered;
+  background-color: #1b98e0;
+  color: white;
   transition: background-color 0.6s ease-in-out;
 }
 .profile-bottom-btn:hover {
-  background-color: red;
+  background-color: #3078a3;
 }
 
 /* Add more styling as needed */
 
-@keyframes slideInFromLeft {
+/* @keyframes slideInFromLeft {
   0% {
     opacity: 0;
-    transform: translatey(-100%);
+    transform: translatey(0);
   }
   100% {
     opacity: 1;
-    transform: translatey(0);
+    transform: translatey(100%);
   }
-}
+} */
 
 .profile-left {
   margin-top: 90px;
@@ -135,7 +137,7 @@
   height: 80px;
   align-items: center;
   justify-content: space-between;
-  background-color: #4caf50;
+  background-color: #1b98e0;
   color: white;
   padding: 0 20px;
   border-radius: 5px;
@@ -186,26 +188,49 @@
   margin-bottom: 15px;
 }
 
-.profile-contact-row1 input,
-.profile-contact-row2 input {
+.profile-info-input,
+.profile-info-input {
   flex: 1;
   margin-right: 10px;
 }
-
-.profile-contact-input-container label {
+.profile-info-input:focus {
+  outline-color: #1b98e0;
+}
+.profile-headder-info {
+  font-family: "Work Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-size: 24px;
+  padding-top: 40px;
+  padding-bottom: 20px;
+  margin-left: 10px;
+}
+/* .profile-contact-input-container label {
+  font-family: "Work Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
   width: 100px;
   text-align: right;
   margin-right: 10px;
   font-weight: bold;
-}
+} */
 
 .profile-left-label {
+  font-family: "Work Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
   width: 120px;
   text-align: right;
   margin-right: 20px;
   font-weight: bold;
 }
-
+.pro-con-label {
+  font-family: "Work Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 700;
+  color: black;
+  margin-bottom: 10px;
+}
 .profile-contact-wrapper {
   width: 100%;
   background-color: white;
@@ -223,6 +248,10 @@
   border: 1px solid #ccc;
   border-radius: 5px;
   width: 100%;
+}
+.pro-con-input:focus {
+  color: #1b98e0;
+  outline-color: #1b98e0;
 }
 .profile-contact-row1 {
   display: flex;
@@ -255,6 +284,7 @@
 }
 
 textarea:focus {
-  outline: none;
-  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+  outline-color: #1b98e0;
+  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
+    rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
 }

@@ -3,9 +3,12 @@ import CourseData from "./data";
 import "/src/assets/Css/courseList.css";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { useNavigate } from "react-router-dom";
 
 const Course = () => {
+  const nav = useNavigate();
   const handleEnroll = (courseName) => {
+    nav("/user/payment");
     toast.success(`Course Enrolled: ${courseName}`);
   };
 
@@ -39,8 +42,8 @@ const Course = () => {
             </div>
           </div>
         ))}
-        </div>
-        <ToastContainer />
+      </div>
+      <ToastContainer />
     </div>
   );
 };

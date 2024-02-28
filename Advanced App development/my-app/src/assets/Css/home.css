@@ -2,6 +2,8 @@
 @import url("https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=Protest+Revolution&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Protest+Riot&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap");
 .home-container {
   background-color: aliceblue;
 }
@@ -18,9 +20,75 @@
   justify-content: center;
   gap: 40px;
 }
-.home-down-arrow {
+.home-container-top-wrapper {
   position: relative;
-  top: 100px;
+  bottom: 33px;
+  width: 95%;
+  height: 400px;
+  display: flex;
+  background-color: #001233;
+  box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px,
+    rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+  color: white;
+}
+
+.home-container-top-wrapper-left {
+  text-align: start;
+  display: flex;
+  flex-direction: column;
+  /* align-items: center; */
+  justify-content: center;
+  height: 100%;
+  width: 60%;
+}
+
+/* Style for the heading */
+.home-container-top-wrapper-left h1 {
+  color: orangered;
+  font-size: 36px;
+  font-weight: bold;
+  margin-top: 25px;
+  margin-left: 15px;
+  margin-bottom: 20px; /* Adds some space below the heading */
+  font-family: "Work Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: normal;
+}
+
+/* Style for the paragraph */
+.home-container-top-wrapper-left p {
+  margin-left: 12px;
+  font-size: 18px;
+  line-height: 1.5; /* Sets the line height to improve readability */
+  color: white; /* Medium gray color */
+  margin-bottom: 30px; /* Adds more space below the paragraph */
+  font-family: "Quicksand", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.home-container-top-bottom-head {
+  font-size: 20px;
+  text-align: center;
+  font-family: "Work Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: normal;
+}
+.home-container-top-wrapper-right {
+  height: 100%;
+  width: 40%;
+  background-image: url("D:\advanced-app-development\Advanced App development\my-app\src\assets\Images\home-top.jpg");
+  background-position: center;
+  background-size: cover;
+  border-top-left-radius: 50%;
+  border-bottom-left-radius: 50%;
+}
+.home-down-arrow {
+  /* position: relative; */
+  /* top: 20px; */
   width: 23px;
   height: 23px;
   border: 2px solid #333;
@@ -52,40 +120,54 @@
 /* Layer 2: Styles for the button */
 
 /* CSS */
+/* CSS */
 .home-button {
-  margin: 10px;
-  padding: 20px 45px;
-  text-align: center;
-  text-transform: uppercase;
-  transition: 0.5s;
-  background-size: 200% auto;
-  color: white;
-  border-radius: 10px;
-  display: block;
-  border: 0px;
-  font-weight: 700;
-  box-shadow: 0px 0px 14px -7px #f09819;
-  background-image: linear-gradient(
-    45deg,
-    #ff512f 0%,
-    #f09819 51%,
-    #ff512f 100%
-  );
-  cursor: pointer;
+  align-items: center;
+  background-image: linear-gradient(144deg, #af40ff, #5b42f3 50%, #00ddeb);
+  border: 0;
+  border-radius: 8px;
+  box-shadow: rgba(151, 65, 252, 0.2) 0 15px 30px -5px;
+  box-sizing: border-box;
+  color: #ffffff;
+  display: flex;
+  font-family: Phantomsans, sans-serif;
+  font-size: 20px;
+  justify-content: center;
+  line-height: 1em;
+  max-width: 100%;
+  min-width: 140px;
+  padding: 3px;
+  text-decoration: none;
   user-select: none;
   -webkit-user-select: none;
   touch-action: manipulation;
+  white-space: nowrap;
+  cursor: pointer;
 }
 
+.home-button:active,
 .home-button:hover {
-  background-position: right center;
-  /* change the direction of the change here */
-  color: #fff;
-  text-decoration: none;
+  outline: 0;
 }
 
-.home-button:active {
-  transform: scale(0.95);
+.home-button span {
+  background-color: rgb(5, 6, 45);
+  padding: 16px 24px;
+  border-radius: 6px;
+  width: 100%;
+  height: 100%;
+  transition: 300ms;
+}
+
+.home-button:hover span {
+  background: none;
+}
+
+@media (min-width: 768px) {
+  .button-64 {
+    font-size: 24px;
+    min-width: 196px;
+  }
 }
 
 /* Keyframes for animation */
@@ -392,96 +474,58 @@
 }
 
 /* CSS */
+
+/* CSS */
 .contact-link-bottom-card {
-  touch-action: manipulation;
-  appearance: button;
-  background-color: transparent;
-  border-style: initial;
-  border-width: 0;
+  align-items: center;
+  appearance: none;
+  background-image: radial-gradient(
+    100% 100% at 100% 0,
+    #5adaff 0,
+    #5468ff 100%
+  );
+  border: 0;
+  border-radius: 6px;
+  box-shadow: rgba(45, 35, 66, 0.4) 0 2px 4px,
+    rgba(45, 35, 66, 0.3) 0 7px 13px -3px, rgba(58, 65, 111, 0.5) 0 -3px 0 inset;
+  box-sizing: border-box;
+  color: #fff;
   cursor: pointer;
-  margin: 0;
-  text-transform: none;
-  vertical-align: baseline;
+  display: inline-flex;
+  font-family: "JetBrains Mono", monospace;
+  height: 48px;
+  justify-content: center;
+  line-height: 1;
+  list-style: none;
+  overflow: hidden;
+  padding-left: 16px;
+  padding-right: 16px;
+  position: relative;
+  text-align: left;
+  text-decoration: none;
+  transition: box-shadow 0.15s, transform 0.15s;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  white-space: nowrap;
+  will-change: box-shadow, transform;
+  font-size: 18px;
 }
 
 .contact-link-bottom-card:focus {
-  outline: 0;
+  box-shadow: #3c4fe0 0 0 0 1.5px inset, rgba(45, 35, 66, 0.4) 0 2px 4px,
+    rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #3c4fe0 0 -3px 0 inset;
 }
 
-.contact-link-bottom-card {
-  touch-action: manipulation;
-  background-image: linear-gradient(
-    135deg,
-    color(display-p3 0.572549 0.415686 1) 0%,
-    color(display-p3 1 0.466667 0.690196) 50%,
-    color(display-p3 1 0.701961 0.403922) 100%
-  );
-  border-radius: 8px;
-  color: #fff;
-  font-feature-settings: "ss01", "cv10", "calt" 0, "liga" 0;
-  font-size: 16px;
-  font-weight: 500;
-  line-height: 24px;
-  padding: 10px 20px;
-  position: relative;
-  transition: transform 0.2s cubic-bezier(0.6, 0.6, 0, 1),
-    margin-top 0.2s cubic-bezier(0.6, 0.6, 0, 1);
-  transition-behavior: normal, normal;
-}
-
-.contact-link-bottom-card::before {
-  -webkit-mask-clip: content-box, initial;
-  -webkit-mask-composite: xor;
-  -webkit-mask-image: linear-gradient(#fff 0, #fff 0),
-    linear-gradient(#fff 0, #fff 0);
-  -webkit-mask-origin: content-box, initial;
-  -webkit-mask-position-x: initial, initial;
-  -webkit-mask-position-y: initial, initial;
-  -webkit-mask-repeat-x: initial, initial;
-  -webkit-mask-repeat-y: initial, initial;
-  -webkit-mask-size: initial, initial;
-  padding: 1px;
-}
-
-.contact-link-bottom-card::before {
-  background-color: initial;
-  background-image: linear-gradient(rgba(255, 255, 255, 0.32), transparent);
-  bottom: 0;
-  pointer-events: none;
-  right: 0;
-}
-
-.contact-link-bottom-card::after,
-.contact-link-bottom-card::before {
-  border-radius: inherit;
-  content: "";
-  left: 0;
-  position: absolute;
-  top: 0;
-}
-
-.contact-link-bottom-card::after {
-  box-shadow: #000019 0 0, rgba(0, 0, 25, 0.3) 0 9px 21px,
-    rgba(73, 2, 57, 0.2) 0 -3px inset;
-  height: 100%;
-  transition: box-shadow 0.2s cubic-bezier(0.6, 0.6, 0, 1),
-    background-color 0.2s cubic-bezier(0.6, 0.6, 0, 1);
-  transition-behavior: normal, normal;
-  width: 100%;
-  z-index: 1;
+.contact-link-bottom-card:hover {
+  box-shadow: rgba(45, 35, 66, 0.4) 0 4px 8px,
+    rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #3c4fe0 0 -3px 0 inset;
+  transform: translateY(-2px);
 }
 
 .contact-link-bottom-card:active {
-  transform: translateY(1.5px);
-}
-
-.contact-link-bottom-card:hover::after {
-  background-color: rgba(255, 255, 255, 0.1);
-}
-
-.contact-link-bottom-card::after {
-  box-shadow: #000019 0 0, rgba(0, 0, 25, 0.2) 0 9px 21px,
-    rgba(73, 2, 57, 0.2) 0 0 inset;
+  box-shadow: #3c4fe0 0 3px 7px inset;
+  transform: translateY(2px);
 }
 
 .about-container-card img {
