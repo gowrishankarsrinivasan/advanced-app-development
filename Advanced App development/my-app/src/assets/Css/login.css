@@ -26,7 +26,7 @@
 
 .left-half-header {
   font-size: 80px;
-  color: orangered;
+  color: #1b98e0;
 }
 
 .left-half-content {
@@ -86,7 +86,7 @@
 }
 
 .react-icons:nth-child(3) {
-  color: #ea4335;
+  color: #1b98e0;
 }
 
 .right-half-form-container {
@@ -144,7 +144,7 @@
   color: transparent;
 }
 
-.form-bottombar{
+.form-bottombar {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -156,7 +156,7 @@
   padding: 12px;
   border: none;
   border-radius: 8px;
-  background-color: orangered;
+  background-color: #1b98e0;
   color: #ffffff;
   font-size: 16px;
   font-weight: bold;
@@ -165,7 +165,7 @@
 }
 
 .login-btn:hover {
-  background-color:orange;
+  background-color: #0069a7;
 }
 
 .login-link {
@@ -177,9 +177,8 @@
   transition: color 0.3s ease;
 }
 
-
 .login-link:hover {
-  color: #f60000;
+  color: #1b98e0;
 }
 
 .login-p {
@@ -187,6 +186,6 @@
   margin-right: 20px;
 }
 
-.login-link span{
+.login-link span {
   font-size: 20px;
 }

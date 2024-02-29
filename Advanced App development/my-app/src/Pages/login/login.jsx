@@ -57,7 +57,7 @@ const Login = () => {
       <div className="right-half">
         <header className="login-header">
           <h2>
-            Sign In to Your <span style={{ color: "orangered" }}>Account</span>
+            Sign In to Your <span style={{ color: " #1b98e0" }}>Account</span>
           </h2>
         </header>
         <div className="social-icons">

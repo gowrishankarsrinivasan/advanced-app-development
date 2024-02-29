@@ -15,6 +15,7 @@ const LazyDash = lazy(() => import("./Pages/Admin/dash"));
 const LazyQuery = lazy(() => import("./Pages/User/enquiry"));
 const lazyAdminCourseForm = lazy(() => import("./Pages/Admin/courseForm"));
 const lazyPaymentPage = lazy(() => import("./Pages/User/payment"));
+const LazyQueryReply = lazy(()=> import("./Pages/instructor/instructor"));
 const UserRoutes = () => {
   return (
     <UserLayout>
@@ -41,6 +42,10 @@ const UserRoutes = () => {
         <Route
           path="/payment"
           element={<LazyLayout component={lazyPaymentPage} />}
+        />
+        <Route
+          path="/reply"
+          element={<LazyLayout component={LazyQueryReply} />}
         />
       </Routes>
     </UserLayout>
