@@ -26,14 +26,14 @@ function PaymentPage() {
                   harum ipsum hic, nemo qui!
                 </p>
               </div>
-              <label htmlFor="cardNumber">Card Number:</label>
+              <label htmlFor="cardNumber">Card holder Name:</label>
               <input type="text" id="cardNumber" name="cardNumber" />
 
-              <label htmlFor="expiryDate">Expiry Date:</label>
+              <label htmlFor="expiryDate">Card number:</label>
               <input type="text" id="expiryDate" name="expiryDate" />
               <div className="form-split">
                 <div className="form-split-column">
-                  <label htmlFor="cvv">MM/YY</label>
+                  <label htmlFor="cvv">dd/MM/YY</label>
                   <input type="text" id="cvv" name="cvv" />
                 </div>
                 <div className="form-split-column">

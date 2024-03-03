@@ -57,14 +57,11 @@ const Login = () => {
       <div className="right-half">
         <header className="login-header">
           <h2>
-            Sign In to Your <span style={{ color: " #1b98e0" }}>Account</span>
+            Sign In to Your <br />
+            <span style={{ color: " #1b98e0" }}>Account</span>
           </h2>
         </header>
-        <div className="social-icons">
-          <FaFacebook className="react-icons" />
-          <FaLinkedinIn className="react-icons" />
-          <IoMdMail className="react-icons" />
-        </div>
+
         <div className="right-half-form-container">
           <form className="login-form" onSubmit={handleSubmit}>
             <div className="input-field">
@@ -86,7 +83,7 @@ const Login = () => {
               />
             </div>
             <div className="form-bottombar">
-              <Link to="#" className="login-link">
+              <Link to="/forgot-password" className="login-link">
                 Forgot password?
               </Link>
 

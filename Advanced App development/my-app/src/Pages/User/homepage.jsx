@@ -19,22 +19,27 @@ import p2 from "/src/assets/Images/home/p2.jpg";
 import p3 from "/src/assets/Images/home/p3.jpg";
 // import { FaChevronDown } from "react-icons/fa";
 const Homepage = () => {
-  // const [isScrolled, setisScrolled] = useState(false);
-  // const ref = useRef(null);
-  // const handleScroll = () => {
-  //   window.scrollTo({
-  //     top: ref.current.offsetTop,
-  //     behavior: "smooth",
-  //   });
-  //   setIsScrolled(true);
-  //   setTimeout(() => {
-  //     window.scrollTo({
-  //       top: 0,
-  //       behavior: "smooth",
-  //     });
-  //     setIsScrolled(false);
-  //   }, 4000);
-  // };
+  const [isScrolled, setisScrolled] = useState(false);
+  const ref = useRef(null);
+  const handleScroll = () => {
+    window.scrollTo({
+      top: ref.current.offsetTop,
+      behavior: "smooth",
+    });
+    setIsScrolled(true);
+    setTimeout(() => {
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth",
+      });
+      setIsScrolled(false);
+    }, 4000);
+  };
+
+  const handleGetStartedClick = () => {
+    ref.current.scrollIntoView({ behavior: "smooth" });
+  };
+
   return (
     <div className="home-container">
       <div className="home-container-top">
@@ -62,7 +67,7 @@ const Homepage = () => {
           <h1>We help people learn English and prove</h1>
           <h1>their skills to the world</h1>
         </div>
-        <button className="home-button">
+        <button className="home-button" onClick={handleGetStartedClick}>
           <span>GET STARTED</span>
         </button>
       </div>
@@ -88,7 +93,7 @@ const Homepage = () => {
         </div>
 
         {/* Third card */}
-        <div className="card">
+        <div className="card" ref={ref}>
           <h3>Support for instructors</h3>
           <img className="home-img" src={img3} alt="Instructors" />
           <p>

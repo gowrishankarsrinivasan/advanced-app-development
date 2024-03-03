@@ -26,7 +26,7 @@ const Navbar = () => {
   const nav = useNavigate();
 
   const handleProfile = () => {
-    nav("/user/profile");
+    nav("/bec.com/user/profile");
   };
   const handleLogout = () => {
     nav("/routeTo/signUp");
@@ -59,15 +59,15 @@ const Navbar = () => {
       </div>
       <ul className="navbar-center">
         <li>
-          <Link to="/user/home">Home</Link>
+          <Link to="/bec.com/user/home">Home</Link>
         </li>
         <li>
-          <Link to="/user/courseList" href="#">
+          <Link to="/bec.com/user/courseList" href="#">
             Courses
           </Link>
         </li>
         <li>
-          <Link to="/user/query">Enquiry</Link>
+          <Link to="/bec.com/user/query">Enquiry</Link>
         </li>
       </ul>
       <div className="navbar-right">
@@ -92,7 +92,7 @@ const Navbar = () => {
           </button>
         </div>
         <div className="sidebar-profile">
-          <Link to="/user/profile">
+          <Link to="/bec.com/user/profile">
             <img className="sidebar-items-img" src={img} />
           </Link>
           <div className="profile-name-container">
@@ -103,22 +103,22 @@ const Navbar = () => {
         <div className="sidebar-content">
           <div className="sidebar-items">
             <IoMdHome />
-            <Link to="/user/home">Home</Link>
+            <Link to="/bec.com/user/home">Home</Link>
           </div>
           <div className="sidebar-items">
             <IoMdHome />
-            <Link to="/product">DashBoard</Link>
+            <Link to="/bec.com/user/dashboard">DashBoard</Link>
           </div>
           <div className="sidebar-items">
             <MdDashboard />
-            <Link to="/user/courseList">Add Course</Link>
+            <Link to="/bec.com/user/courseList">Add Course</Link>
           </div>
           <div className="sidebar-items">
-          <SiGooglebigquery />
-            <Link to="/product">Enquiry</Link>
+            <SiGooglebigquery />
+            <Link to="/bec.com/admin/reply">Enquiry</Link>
           </div>
           <div className="sidebar-items">
-          <IoMdLogOut />
+            <IoMdLogOut />
             <Link to="/product">Log out</Link>
           </div>
         </div>

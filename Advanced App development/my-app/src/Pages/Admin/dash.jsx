@@ -1,5 +1,5 @@
 // Dashboard.jsx
-import "/src/assets/Css/dashboard.css";
+import "/src/assets/Css/Admincss/dashboard.css";
 import { useState } from "react";
 
 const AdminProfilePage = () => {
@@ -41,16 +41,36 @@ const AdminProfilePage = () => {
     <div className="admin-profile-container">
       <div className="container">
         <div className="half-size">
-        <div className="half-size-content">
-          <h1>Hello Gowri Shankar</h1>
-          <p> Welcome to our online learning platform! We're excited to have you here and help you achieve your goals.
-          Good Luck with your learning.</p>
+          <div className="half-size-content">
+            <h1>Hello Gowri Shankar</h1>
+            <p>
+              {" "}
+              Welcome to our online learning platform! We're excited to have you
+              here and help you achieve your goals. Good Luck with your
+              learning.
+            </p>
           </div>
           <div className="card-wrapper">
-            <div className="card">Users</div>
-            <div className="card">Admin</div>
-            <div className="card">Add Courses</div>
-            <div className="card">View Query</div>
+            <div className="card">
+              <p>Total Users</p>
+              <br />
+              <h1>20</h1>
+            </div>
+            <div className="card">
+              <p>total instructor</p>
+              <br />
+              <h1>15</h1>
+            </div>
+            <div className="card">
+              <p>Total Courses</p>
+              <br />
+              <h1>100</h1>
+            </div>
+            <div className="card">
+              <p>Courses Enrolled</p>
+              <br />
+              <h1>100</h1>
+            </div>
           </div>
         </div>
       </div>

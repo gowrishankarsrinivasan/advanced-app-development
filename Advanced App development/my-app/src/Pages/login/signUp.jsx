@@ -92,7 +92,7 @@ const Signup = () => {
             </button>
             <p>
               Already have an account?{" "}
-              <Link to="/routeTo/login">
+              <Link to="/bec.com/login">
                 <span>Sign in instead</span>
               </Link>
             </p>

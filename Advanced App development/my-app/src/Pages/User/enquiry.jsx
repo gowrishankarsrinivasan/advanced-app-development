@@ -1,32 +1,43 @@
 import React, { useState } from "react";
 import "/src/assets/Css/enquiry.css"; // Adjust the path to your CSS file
+import axios from "axios";
 
 const EnquiryForm = () => {
-  const [enquiryData, setEnquiryData] = useState({
-    courseName: "",
-    description: "",
-    email: "",
-    enquiryType: "",
-    message: "",
-  });
+  // const [enquiryData, setEnquiryData] = useState({
+  //   courseName: "",
+  //   description: "",
+  //   email: "",
+  //   enquiryType: "",
+  //   message: "",
+  // });
 
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setEnquiryData({ ...enquiryData, [name]: value });
-  };
+  // const handleChange = (e) => {
+  //   const { name, value } = e.target;
+  //   setEnquiryData({ ...enquiryData, [name]: value });
+  // };
 
-  const handleSubmit = (e) => {
+  const [courseName, setCourseName] = useState("");
+  const [email, setEmail] = useState("");
+  const [enquiryType, setEnquiryType] = useState("");
+  const [message, setMessage] = useState("");
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // Code to handle form submission, e.g., send enquiry data to backend
-    console.log("Enquiry submitted:", enquiryData);
-    // Reset form fields
-    setEnquiryData({
-      courseName: "",
-      description: "",
-      email: "",
-      enquiryType: "",
-      message: "",
-    });
+    const data = {
+      course_name: courseName,
+      email: email,
+      enquiry_type: enquiryType,
+      message: message,
+    };
+    try {
+      const response = await axios.post(
+        "http://127.0.0.1:8181/save/enquiry",
+        data
+      );
+      console.log("data submitted");
+    } catch (error) {
+      console.error(error);
+    }
   };
 
   return (
@@ -46,8 +57,8 @@ const EnquiryForm = () => {
                   type="text"
                   id="courseName"
                   name="courseName"
-                  value={enquiryData.courseName}
-                  onChange={handleChange}
+                  value={courseName}
+                  onChange={(e) => setCourseName(e.target.value)}
                   required
                 />
               </div>
@@ -60,8 +71,8 @@ const EnquiryForm = () => {
                   type="email"
                   id="email"
                   name="email"
-                  value={enquiryData.email}
-                  onChange={handleChange}
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
                   required
                 />
               </div>
@@ -73,8 +84,8 @@ const EnquiryForm = () => {
                   className="input-select"
                   id="enquiryType"
                   name="enquiryType"
-                  value={enquiryData.enquiryType}
-                  onChange={handleChange}
+                  value={enquiryType}
+                  onChange={(e) => setEnquiryType(e.target.value)}
                   required
                 >
                   <option value="">Select Enquiry Type</option>
@@ -90,8 +101,8 @@ const EnquiryForm = () => {
                   className="textarea-field"
                   id="message"
                   name="message"
-                  value={enquiryData.message}
-                  onChange={handleChange}
+                  value={message}
+                  onChange={(e) => setMessage(e.target.value)}
                   rows="4"
                   required
                 ></textarea>

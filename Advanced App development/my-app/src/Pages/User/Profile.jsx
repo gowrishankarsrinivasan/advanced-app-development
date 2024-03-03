@@ -102,7 +102,7 @@ const Profile = () => {
         <p className="profile-headder-info">About me</p>
         <div className="profile-left-about-container">
           <p className="pro-con-label">About me</p>
-          <textarea></textarea>
+          <textarea className="pro-con-message"></textarea>
         </div>
       </div>
       <div className="profile-card">

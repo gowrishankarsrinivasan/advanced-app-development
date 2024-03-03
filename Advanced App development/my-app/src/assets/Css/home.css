@@ -26,7 +26,7 @@
   width: 95%;
   height: 400px;
   display: flex;
-  background-color: #001233;
+  background-color: #90e0ef;
   box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px,
     rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
   color: white;
@@ -44,7 +44,7 @@
 
 /* Style for the heading */
 .home-container-top-wrapper-left h1 {
-  color: orangered;
+  color: #03045e;
   font-size: 36px;
   font-weight: bold;
   margin-top: 25px;
@@ -61,7 +61,7 @@
   margin-left: 12px;
   font-size: 18px;
   line-height: 1.5; /* Sets the line height to improve readability */
-  color: white; /* Medium gray color */
+  color: #0d1b2a; /* Medium gray color */
   margin-bottom: 30px; /* Adds more space below the paragraph */
   font-family: "Quicksand", sans-serif;
   font-optical-sizing: auto;
