@@ -1,10 +1,12 @@
-import React from "react";
+import React, { useState } from "react";
 import { FaArrowLeft } from "react-icons/fa";
 import { BsThreeDotsVertical } from "react-icons/bs";
 import img from "/src/assets/Images/avatar.jpg";
 import "/src/assets/Css/profile.css";
+import axios from "axios";
 
 const Profile = () => {
+  const [isEdit, setIsEdit] = useState(false);
   const userData = {
     name: "Shankar",
     address: "Coimbatore, Tamil Nadu",
@@ -13,6 +15,50 @@ const Profile = () => {
     Phone_Number: "1234567890",
     age: "20",
     profilePicture: img,
+  };
+
+  const [firstName, setFirstName] = useState("");
+  const [lastName, setLastName] = useState("");
+  const [email, setEmail] = useState("");
+  const [Mobile, setMobile] = useState("");
+  const [address, setAddress] = useState("");
+  const [city, setCity] = useState("");
+  const [state, setState] = useState("");
+  const [Postal, setPoastal] = useState("");
+  const [aboutMe, setAboutMe] = useState("");
+
+  const handleSave = async (e) => {
+    e.preventDefault();
+    setIsEdit(false);
+    const data = {
+      first_name: firstName,
+      last_name: lastName,
+      Mobile: Mobile,
+      email: email,
+      address: address,
+      state: state,
+      city: city,
+      postal_code: Postal,
+      about_me: aboutMe,
+    };
+    try {
+      const response = await axios.post(
+        "http://127.0.0.1:8181/profile/save",
+        data
+      );
+      if (response.status === 200) {
+      }
+    } catch (error) {
+      console.error(error);
+    }
+    setFirstName("");
+    setLastName("");
+    setMobile("");
+    setEmail("");
+    setAboutMe("");
+    setCity("");
+    setPoastal("");
+    setAddress("");
   };
 
   return (
@@ -34,21 +80,36 @@ const Profile = () => {
                   <input
                     className="profile-info-input"
                     placeholder="Gowri shankar"
+                    disabled={!isEdit}
+                    value={firstName}
+                    onChange={(e) => setFirstName(e.target.value)}
                   />
                 </div>
               </div>
               <div className="profile-info-row">
                 <div className="profile-info-input-container">
                   <label className="profile-left-label">Last name</label>
-                  <input className="profile-info-input" placeholder="S" />
+                  <input
+                    className="profile-info-input"
+                    placeholder="S"
+                    value={lastName}
+                    onChange={(e) => setLastName(e.target.value)}
+                    disabled={!isEdit}
+                  />
                 </div>
               </div>
             </div>
             <div className="profile-info1">
               <div className="profile-info-row">
                 <div className="profile-info-input-container">
-                  <label className="profile-left-label">User name</label>
-                  <input className="profile-info-input" placeholder="gowri@" />
+                  <label className="profile-left-label">Mobile Number</label>
+                  <input
+                    className="profile-info-input"
+                    placeholder="1234567890"
+                    value={Mobile}
+                    onChange={(e) => setMobile(e.target.value)}
+                    disabled={!isEdit}
+                  />
                 </div>
               </div>
               <div className="profile-info-row">
@@ -57,6 +118,9 @@ const Profile = () => {
                   <input
                     className="profile-info-input"
                     placeholder="abc@gmail.com"
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                    disabled={!isEdit}
                   />
                 </div>
               </div>
@@ -68,7 +132,14 @@ const Profile = () => {
           <div className="profile-contact-container">
             <div className="profile-contact-row1">
               <label className="pro-con-label">Address</label>
-              <input type="text" className="pro-con-input"></input>
+              <input
+                type="text"
+                placeholder="Address"
+                className="pro-con-input"
+                value={address}
+                onChange={(e) => setAddress(e.target.value)}
+                disabled={!isEdit}
+              ></input>
             </div>
 
             <div className="profile-contact-row2">
@@ -77,7 +148,10 @@ const Profile = () => {
                 <input
                   type="text"
                   placeholder="Tamil nadu"
+                  value={state}
+                  onChange={(e) => setState(e.target.value)}
                   className="pro-con-input"
+                  disabled={!isEdit}
                 ></input>
               </div>
               <div className="profile-contact-row2-items">
@@ -85,7 +159,10 @@ const Profile = () => {
                 <input
                   type="text"
                   placeholder="Coimbatore"
+                  value={city}
+                  onChange={(e) => setCity(e.target.value)}
                   className="pro-con-input"
+                  disabled={!isEdit}
                 ></input>
               </div>
               <div className="profile-contact-row2-items">
@@ -93,7 +170,10 @@ const Profile = () => {
                 <input
                   type="text"
                   placeholder="Postal code"
+                  value={Postal}
+                  onChange={(e) => setPoastal(e.target.value)}
                   className="pro-con-input"
+                  disabled={!isEdit}
                 ></input>
               </div>
             </div>
@@ -102,7 +182,12 @@ const Profile = () => {
         <p className="profile-headder-info">About me</p>
         <div className="profile-left-about-container">
           <p className="pro-con-label">About me</p>
-          <textarea className="pro-con-message"></textarea>
+          <textarea
+            className="pro-con-message"
+            value={aboutMe}
+            onChange={(e) => setAboutMe(e.target.value)}
+            disabled={!isEdit}
+          ></textarea>
         </div>
       </div>
       <div className="profile-card">
@@ -171,7 +256,18 @@ const Profile = () => {
           </div>
         </div>
         <div className="profile-bottom">
-          <button className="profile-bottom-btn">Update</button>
+          {isEdit ? (
+            <button className="profile-bottom-btn" onClick={handleSave}>
+              Save
+            </button>
+          ) : (
+            <button
+              className="profile-bottom-btn"
+              onClick={() => setIsEdit(true)}
+            >
+              Update
+            </button>
+          )}
         </div>
       </div>
     </div>

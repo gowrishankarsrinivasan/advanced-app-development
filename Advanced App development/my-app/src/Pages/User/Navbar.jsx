@@ -29,7 +29,7 @@ const Navbar = () => {
     nav("/bec.com/user/profile");
   };
   const handleLogout = () => {
-    nav("/routeTo/signUp");
+    nav("/bec.com/signUp");
   };
 
   // Close the dropdown when clicking outside of it
@@ -119,7 +119,7 @@ const Navbar = () => {
           </div>
           <div className="sidebar-items">
             <IoMdLogOut />
-            <Link to="/product">Log out</Link>
+            <Link to="/bec.com/signUp">Log out</Link>
           </div>
         </div>
       </div>

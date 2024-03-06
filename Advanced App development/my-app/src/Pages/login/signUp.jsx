@@ -8,7 +8,7 @@ const Signup = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
-
+  const user = "user";
   const handleSubmit = async (e) => {
     e.preventDefault();
 
@@ -23,6 +23,7 @@ const Signup = () => {
       name: name,
       email: email,
       password: password,
+      role: user,
     };
 
     // existingData.push(newUser); // Add the new user data to the existing array
@@ -31,7 +32,7 @@ const Signup = () => {
 
     try {
       const response = await axios.post(
-        "http://127.0.0.1:8181/api/v1/user/register",
+        "http://127.0.0.1:8181/api/v1/auth/register",
         newUser
       );
       console.log("Data stored in DB:", response.data);

@@ -6,49 +6,43 @@ import { IoMdMail } from "react-icons/io";
 import { Link } from "react-router-dom";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import axios from "axios";
 
 const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-
-    const storedUserData = localStorage.getItem("user");
-    let data = null;
-
-    if (email.trim() === "" && password.trim() === "") {
-      toast.warn("Please enter email and password");
-    }
-    if (storedUserData) {
-      data = JSON.parse(storedUserData);
-    }
-    console.log("Data from localStorage:", data); // Add this line for debugging
-
-    let match = false;
-
-    // Check if data exists and email/password match
-    if (data && data.email === email && data.password === password) {
-      match = true;
-    }
-
-    if (match) {
-      toast.success("Logged in successfully");
-      console.log("User logged");
-    } else if (email.trim() !== "" && password.trim() !== "" && !match) {
-      toast.error("User not found");
-      setEmail("");
-      setPassword("");
-    }
-  };
-
-  // Clear error message when user starts typing
   const handleEmailChange = (e) => {
     setEmail(e.target.value);
   };
 
   const handlePasswordChange = (e) => {
     setPassword(e.target.value);
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    if (email.trim() === "" || password.trim() === "") {
+      toast.warn("Please enter email and password");
+      return;
+    }
+
+    const data = {
+      email: email,
+      password: password,
+    };
+
+    try {
+      const response = await axios.post(
+        "http://127.0.0.1:8181/api/v1/auth/login",
+        data
+      );
+      // Handle success response
+    } catch (error) {
+      // Handle error response
+      console.error("Error:", error);
+    }
   };
 
   return (
@@ -100,7 +94,7 @@ const Login = () => {
                 }}
               >
                 Don't you have an account?
-                <Link to="/routeTo/signUp" className="login-link">
+                <Link to="/bec.com/signUp" className="login-link">
                   <span>Register</span>
                 </Link>
               </p>

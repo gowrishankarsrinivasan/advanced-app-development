@@ -1,0 +1,81 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap");
+
+.reply-container {
+  height: 90vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* background-color: #f5f5f5; */
+  font-family: "Noto Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: normal;
+  font-variation-settings: "wdth" 100;
+}
+.reply-message-img {
+  height: 600px;
+  width: 600px;
+  background-image: url("D:\advanced-app-development\Advanced App development\my-app\src\assets\Images\QueryReply.jpg");
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+.reply-wrapper {
+  width: 80%;
+  height: 500px;
+  max-width: 600px;
+  padding: 40px;
+  /* border-radius: 8px; */
+  background-color: #ffffff; /* White background */
+  /* box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); Subtle shadow */
+}
+
+.reply-wrapper h2 {
+  margin-top: 0;
+  margin-bottom: 20px;
+  font-size: 24px;
+  color: #333; /* Dark grey text */
+}
+
+.enquiry-details {
+  margin-bottom: 20px;
+}
+
+.enquiry-details p {
+  margin: 5px 0;
+  font-size: 16px;
+  color: #666; /* Medium grey text */
+}
+
+.reply-form label {
+  display: block;
+  margin-bottom: 10px;
+  font-size: 18px;
+  color: #333; /* Dark grey text */
+}
+
+.reply-form textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  resize: vertical;
+  font-size: 16px;
+  color: #333; /* Dark grey text */
+}
+
+.reply-form button {
+  padding: 12px 24px;
+  background-color: #007bff; /* Blue button */
+  color: #fff; /* White text */
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 18px;
+  transition: background-color 0.3s ease; /* Smooth transition */
+}
+
+.reply-form button:hover {
+  background-color: #0056b3; /* Darker blue on hover */
+}
