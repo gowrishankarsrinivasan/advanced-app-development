@@ -9,9 +9,9 @@ const AdminLayout = ({ children }) => {
         <Navbar />
       </header>
       <main>{children}</main>
-      <footer>
+      <Footer>
         <Footer />
-      </footer>
+      </Footer>
     </div>
   );
 };

@@ -1,4 +1,4 @@
-import React, { useState, useRef } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import "/src/assets/Css/home.css";
 import { IoCall } from "react-icons/io5";
 import { FaWhatsappSquare } from "react-icons/fa";
@@ -17,6 +17,7 @@ import c5 from "/src/assets/Images/home_img/c5.jpeg";
 import p1 from "/src/assets/Images/home/p1.jpg";
 import p2 from "/src/assets/Images/home/p2.jpg";
 import p3 from "/src/assets/Images/home/p3.jpg";
+import { useSelector } from "react-redux";
 // import { FaChevronDown } from "react-icons/fa";
 const Homepage = () => {
   const [isScrolled, setisScrolled] = useState(false);
@@ -39,6 +40,9 @@ const Homepage = () => {
   const handleGetStartedClick = () => {
     ref.current.scrollIntoView({ behavior: "smooth" });
   };
+
+  const userName = useSelector((state) => state.auth.sub);
+  console.log(userName);
 
   return (
     <div className="home-container">

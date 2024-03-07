@@ -1,21 +1,8 @@
 import React, { useState } from "react";
 import "/src/assets/Css/enquiry.css"; // Adjust the path to your CSS file
-import axios from "axios";
+import { queryPost } from "../../services/auth";
 
 const EnquiryForm = () => {
-  // const [enquiryData, setEnquiryData] = useState({
-  //   courseName: "",
-  //   description: "",
-  //   email: "",
-  //   enquiryType: "",
-  //   message: "",
-  // });
-
-  // const handleChange = (e) => {
-  //   const { name, value } = e.target;
-  //   setEnquiryData({ ...enquiryData, [name]: value });
-  // };
-
   const [courseName, setCourseName] = useState("");
   const [email, setEmail] = useState("");
   const [enquiryType, setEnquiryType] = useState("");
@@ -30,11 +17,13 @@ const EnquiryForm = () => {
       message: message,
     };
     try {
-      const response = await axios.post(
-        "http://127.0.0.1:8181/save/enquiry",
-        data
-      );
-      console.log("data submitted");
+      await queryPost(data).then((res) => {
+        console.log(res.data);
+        setCourseName("");
+        setEmail("");
+        setEnquiryType("");
+        setMessage("");
+      });
     } catch (error) {
       console.error(error);
     }

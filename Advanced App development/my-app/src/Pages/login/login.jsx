@@ -1,17 +1,19 @@
 import React, { useState } from "react";
 import "/src/assets/Css/login.css"; // Import CSS for styling
-import { FaLinkedinIn } from "react-icons/fa";
-import { FaFacebook } from "react-icons/fa";
-import { IoMdMail } from "react-icons/io";
 import { Link } from "react-router-dom";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import axios from "axios";
+import { login } from "../../services/auth";
+import { jwtDecode } from "jwt-decode";
+import { useDispatch } from "react-redux";
+import { loginSuccess } from "../../Redux/authSlice";
+import { useNavigate } from "react-router-dom";
 
 const Login = () => {
+  const dispatch = useDispatch();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-
+  const navigate = useNavigate();
   const handleEmailChange = (e) => {
     setEmail(e.target.value);
   };
@@ -32,16 +34,21 @@ const Login = () => {
       email: email,
       password: password,
     };
-
+    console.log(data);
     try {
-      const response = await axios.post(
-        "http://127.0.0.1:8181/api/v1/auth/login",
-        data
-      );
-      // Handle success response
+      const response = await login(data);
+      const decode = jwtDecode(response?.data?.access_token);
+      console.log("Decoded token:", decode);
+      const { exp, iat, role, sub } = decode;
+      dispatch(loginSuccess({ exp, iat, role, sub }));
+      console.log("Login data stored in Redux:", { exp, iat, role, sub });
+      if (decode.role === "ADMIN") {
+        navigate("/bec.com/admin/dashboard");
+      } else if (decode.role === "USER") {
+        navigate("/bec.com/user/home");
+      }
     } catch (error) {
-      // Handle error response
-      console.error("Error:", error);
+      console.error("Login failed:", error);
     }
   };
 
