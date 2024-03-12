@@ -1,40 +1,37 @@
 // Dashboard.jsx
+import { getAllUser } from "../../services/auth";
 import "/src/assets/Css/Admincss/dashboard.css";
-import { useState } from "react";
-
+import { useEffect, useState } from "react";
+import axios from "axios";
+import { toast, ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 const AdminProfilePage = () => {
-  const [users, setUsers] = useState([
-    { id: 1, username: "user1", email: "user1@example.com", role: "Admin" },
-    { id: 2, username: "user2", email: "user2@example.com", role: "User" },
-    { id: 3, username: "user3", email: "user3@example.com", role: "User" },
-  ]);
-  const [formData, setFormData] = useState({
-    id: "",
-    username: "",
-    email: "",
-    role: "",
-  });
-  const [isEdit, setIsEdit] = useState(false);
+  const [userData, setUserData] = useState([]);
+  const [editedUserId, setEditedUserId] = useState(null);
 
-  const deleteUser = (id) => {
-    setUsers(users.filter((user) => user.id !== id));
+  const fetchData = async () => {
+    try {
+      const response = await axios.get("http://localhost:8181/api/v1/auth/all");
+      setUserData(response.data.users);
+    } catch (error) {
+      console.error(error);
+    }
   };
 
-  const handleEdit = (user) => {
-    setFormData(user);
-    setIsEdit(true);
+  const enrolled = localStorage.getItem("enrolled");
+
+  useEffect(() => {
+    fetchData();
+  }, []);
+
+  const handleEdit = (userId) => {
+    setEditedUserId(userId);
   };
 
   const handleSave = () => {
-    if (isEdit) {
-      setUsers(
-        users.map((user) => (user.id === formData.id ? formData : user))
-      );
-    } else {
-      setUsers([...users, { ...formData, id: Date.now() }]);
-    }
-    setFormData({ id: "", username: "", email: "", role: "" });
-    setIsEdit(false);
+    // Perform save operation
+    setEditedUserId(null); // Reset edited user ID to disable editing
+    toast.success("Changes saved successfully!", { autoClose: 2000 });
   };
 
   return (
@@ -54,22 +51,22 @@ const AdminProfilePage = () => {
             <div className="card">
               <p>Total Users</p>
               <br />
-              <h1>20</h1>
+              <h1>{userData.length}</h1>
             </div>
             <div className="card">
-              <p>total instructor</p>
+              <p>Admin</p>
               <br />
-              <h1>15</h1>
+              <h1>1</h1>
             </div>
             <div className="card">
               <p>Total Courses</p>
               <br />
-              <h1>100</h1>
+              <h1>8</h1>
             </div>
             <div className="card">
               <p>Courses Enrolled</p>
               <br />
-              <h1>100</h1>
+              <h1>{enrolled}</h1>
             </div>
           </div>
         </div>
@@ -78,74 +75,99 @@ const AdminProfilePage = () => {
         <h1>Welcome, Admin</h1>
       </div>
       <div className="admin-profile-content">
-        <div className="user-table">
-          <h2>Users</h2>
-          <table>
-            <thead>
-              <tr>
-                <th>Username</th>
-                <th>Email</th>
-                <th>Role</th>
-                <th>Action</th>
-              </tr>
-            </thead>
-            <tbody>
-              {users.map((user) => (
-                <tr key={user.id}>
-                  <td>{user.username}</td>
-                  <td>{user.email}</td>
-                  <td>{user.role}</td>
-                  <td>
-                    <button
-                      className="edit-button"
-                      onClick={() => handleEdit(user)}
-                    >
-                      Edit
-                    </button>
-                    <button
-                      className="edit-button"
-                      onClick={() => deleteUser(user.id)}
-                    >
-                      Delete
-                    </button>
-                  </td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
-        </div>
-        <div className="user-form">
-          <h2>{isEdit ? "Edit User" : "Add User"}</h2>
-          <input
-            className="dash-input"
-            type="text"
-            placeholder="Username"
-            value={formData.username}
-            onChange={(e) =>
-              setFormData({ ...formData, username: e.target.value })
-            }
-          />
-          <input
-            className="dash-input"
-            type="text"
-            placeholder="Email"
-            value={formData.email}
-            onChange={(e) =>
-              setFormData({ ...formData, email: e.target.value })
-            }
-          />
-          <input
-            className="dash-input"
-            type="text"
-            placeholder="Role"
-            value={formData.role}
-            onChange={(e) => setFormData({ ...formData, role: e.target.value })}
-          />
-          <button onClick={handleSave} className="save-button">
-            {isEdit ? "Save" : "Add"}
-          </button>
+        <div className="user-cards">
+          {userData.map((user, index) => (
+            <div key={user.email} className="user-card">
+              <div className="user-info">
+                {editedUserId === user.id ? (
+                  <div>
+                    <input
+                      className="admin-input"
+                      type="text"
+                      placeholder="Name"
+                      value={user.name}
+                      onChange={(e) =>
+                        setUserData((prevData) => {
+                          const updatedData = [...prevData];
+                          updatedData[index].name = e.target.value;
+                          return updatedData;
+                        })
+                      }
+                    />
+                    <input
+                      className="admin-input"
+                      type="text"
+                      placeholder="Mobile"
+                      value={user.mobile}
+                      onChange={(e) =>
+                        setUserData((prevData) => {
+                          const updatedData = [...prevData];
+                          updatedData[index].mobile = e.target.value;
+                          return updatedData;
+                        })
+                      }
+                    />
+                    <input
+                      className="admin-input"
+                      type="text"
+                      placeholder="Email"
+                      value={user.email}
+                      onChange={(e) =>
+                        setUserData((prevData) => {
+                          const updatedData = [...prevData];
+                          updatedData[index].email = e.target.value;
+                          return updatedData;
+                        })
+                      }
+                    />
+                    <input
+                      className="admin-input"
+                      type="text"
+                      placeholder="Role"
+                      value={user.role}
+                      onChange={(e) =>
+                        setUserData((prevData) => {
+                          const updatedData = [...prevData];
+                          updatedData[index].role = e.target.value;
+                          return updatedData;
+                        })
+                      }
+                    />
+                  </div>
+                ) : (
+                  <div className="profile-datas">
+                    <h3>{user.name}</h3>
+                    <p>Mobile: {user.mobile}</p>
+                    <p>Email: {user.email}</p>
+                    <p>Role: {user.role}</p>
+                  </div>
+                )}
+              </div>
+              <div className="user-actions">
+                {editedUserId === user.id ? (
+                  <button className="edit-button" onClick={handleSave}>
+                    Save
+                  </button>
+                ) : (
+                  <button
+                    className="edit-button"
+                    onClick={() => handleEdit(user.id)}
+                  >
+                    Update
+                  </button>
+                )}
+                <button
+                  className="edit-button"
+                  // onClick={() => deleteUser(user.id)}
+                >
+                  Delete
+                </button>
+              </div>
+            </div>
+          ))}
         </div>
       </div>
+      <ToastContainer />
     </div>
   );
 };

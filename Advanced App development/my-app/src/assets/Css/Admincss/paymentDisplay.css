@@ -1,0 +1,64 @@
+/* paymentDisplay.css */
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+
+.pay-wrapper {
+    height: 100vh;
+    width: 100%;
+    font-family: "Work Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.pay-header {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.payment-list {
+    padding: 40px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 80px;
+
+}
+
+.payment-item {
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease;
+    width: 300px;
+    /* Adjust the width as needed */
+}
+
+.payment-item:hover {
+    transform: translateY(-5px);
+}
+
+.payment-id {
+    display: flex;
+    align-items: center;
+}
+
+.payment-id img {
+    width: 50px;
+    /* Set the image width */
+    height: 50px;
+    /* Set the image height */
+    border-radius: 50%;
+    /* Make the image circular */
+    margin-right: 15px;
+    /* Add space between the image and text */
+}
+
+.payment-id p {
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.email {
+    margin-top: 8px;
+    color: #555;
+}

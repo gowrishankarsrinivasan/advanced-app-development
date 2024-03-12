@@ -48,6 +48,7 @@ const Login = () => {
         navigate("/bec.com/user/home");
       }
     } catch (error) {
+      toast.error("User not found");
       console.error("Login failed:", error);
     }
   };

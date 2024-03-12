@@ -240,7 +240,7 @@ const Homepage = () => {
                 Any Queries regarding our course? just pick up the phone and
                 chat with a member of our Service Team
               </p>
-              <p>+91 1234567890</p>
+              <p>+91 7538875486</p>
             </div>
           </div>
           <div className="contact-bottom-card">

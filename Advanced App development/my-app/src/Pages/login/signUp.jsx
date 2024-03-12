@@ -3,7 +3,7 @@ import "/src/assets/Css/signUp.css";
 import { Link, json } from "react-router-dom";
 import { toast, ToastContainer } from "react-toastify";
 import { register } from "../../services/auth";
-
+import "react-toastify/dist/ReactToastify.css";
 const Signup = () => {
   const [name, setName] = useState("");
   const [mobile, setMobile] = useState("");
@@ -56,12 +56,10 @@ const Signup = () => {
           setEmail("");
           setMobile("");
           setPassword("");
-          // Display success message or navigate to another page if registration is successful
           toast.success("Registration successful!");
         })
         .catch((error) => {
           console.error("Registration failed:", error);
-          // Display error message if registration fails
           toast.error("Registration failed. Please try again later.");
         });
     }

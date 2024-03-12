@@ -60,7 +60,6 @@ const Course = () => {
                     >
                       Enroll
                     </button>
-                    <button className="enroll-button">Delete</button>
                   </div>
                 </div>
               </div>

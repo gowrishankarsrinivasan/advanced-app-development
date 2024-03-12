@@ -1,22 +1,30 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { FaArrowLeft } from "react-icons/fa";
 import { BsThreeDotsVertical } from "react-icons/bs";
 import img from "/src/assets/Images/avatar.jpg";
 import "/src/assets/Css/profile.css";
-import axios from "axios";
+import { toast, ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import {
+  getProfileDetails,
+  profilepost,
+  patchProfile,
+} from "../../services/auth";
+import { useSelector } from "react-redux";
 
 const Profile = () => {
+  const getEmail = useSelector((state) => state.auth.sub);
+  const role = useSelector((state) => state.auth.role);
   const [isEdit, setIsEdit] = useState(false);
   const userData = {
     name: "Shankar",
     address: "Coimbatore, Tamil Nadu",
-    Role: "Admin",
-    Email_Address: "gowrishankardivakar7@gmail.com",
     Phone_Number: "1234567890",
     age: "20",
     profilePicture: img,
   };
 
+  const [id, SetId] = useState("");
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
   const [email, setEmail] = useState("");
@@ -27,38 +35,58 @@ const Profile = () => {
   const [Postal, setPoastal] = useState("");
   const [aboutMe, setAboutMe] = useState("");
 
+  useEffect(() => {
+    fetchData();
+  }, []);
+  const fetchData = async () => {
+    try {
+      const response = await getProfileDetails("shankar@gmail.com");
+      console.log(response.data);
+      // setUserProfile(response.data);
+      // setUserData(response.data);
+      SetId(response.data.id);
+      console.log(id);
+      setFirstName(response.data.first_name);
+      setLastName(response.data.last_name);
+      setEmail(response.data.email);
+      setMobile(response.data.mobile);
+      setAddress(response.data.address);
+      setCity(response.data.city);
+      setState(response.data.state);
+      // toastr.info("Data successfully retrieved from the backend!");
+      setPoastal(response.data.poastal_code);
+      setAboutMe(response.data.about_me);
+    } catch (error) {
+      console.log(error);
+    }
+  };
   const handleSave = async (e) => {
     e.preventDefault();
     setIsEdit(false);
     const data = {
-      first_name: firstName,
-      last_name: lastName,
-      Mobile: Mobile,
+      firstName: firstName,
+      lastName: lastName,
       email: email,
+      mobile: Mobile,
       address: address,
       state: state,
       city: city,
-      postal_code: Postal,
-      about_me: aboutMe,
+      postalCode: Postal,
+      aboutMe: aboutMe,
     };
     try {
-      const response = await axios.post(
-        "http://127.0.0.1:8181/profile/save",
-        data
-      );
-      if (response.status === 200) {
+      if (firstName && lastName) {
+        await patchProfile(id, data);
+        toast.success("Profile updated successfully!");
       }
+      // else {
+      // await profilepost(data).then((res) => {
+      //   toast.success("Registration successful!");
+      // });
+      // }
     } catch (error) {
-      console.error(error);
+      toast.error(error.message);
     }
-    setFirstName("");
-    setLastName("");
-    setMobile("");
-    setEmail("");
-    setAboutMe("");
-    setCity("");
-    setPoastal("");
-    setAddress("");
   };
 
   return (
@@ -230,27 +258,27 @@ const Profile = () => {
 
           <div className="profile-info">
             <div className="info-row">
-              <p>Age</p>
-              <div className="info-row-data">
-                <p>: {userData.age}</p>
-              </div>
-            </div>
-            <div className="info-row">
-              <p>Role</p>
-              <div className="info-row-data">
-                <p>: {userData.Role}</p>
-              </div>
-            </div>
-            <div className="info-row">
               <p>Email</p>
               <div className="info-row-data">
-                <p>: {userData.Email_Address}</p>
+                <p>: {getEmail}</p>
               </div>
             </div>
             <div className="info-row">
               <p>Phone</p>
               <div className="info-row-data">
-                <p>: {userData.Phone_Number}</p>
+                <p>: {Mobile}</p>
+              </div>
+            </div>
+            <div className="info-row">
+              <p>Role</p>
+              <div className="info-row-data">
+                <p>: {role}</p>
+              </div>
+            </div>
+            <div className="info-row">
+              <p>Age</p>
+              <div className="info-row-data">
+                <p>: {userData.age}</p>
               </div>
             </div>
           </div>
@@ -270,6 +298,7 @@ const Profile = () => {
           )}
         </div>
       </div>
+      <ToastContainer />
     </div>
   );
 };

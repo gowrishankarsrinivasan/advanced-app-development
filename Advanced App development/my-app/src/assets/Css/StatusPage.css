@@ -1,0 +1,76 @@
+/* StatusPage.css */
+@import url('https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300;400;500;600;700&display=swap');
+
+.enquiry-status-page {
+  font-family: Arial, sans-serif;
+  margin: 20px auto;
+  padding: 20px;
+  width: 90%;
+  height: auto;
+}
+
+.status-img {
+  height: 90vh;
+  width: 100%;
+  background-image: url("D:\advanced-app-development\Advanced App development\my-app\src\assets\Images\instructorPageImgages\2953962.jpg");
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.page-title {
+  font-size: 24px;
+  margin-bottom: 20px;
+  font-family: "Hind Siliguri", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.enquiry-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-gap: 100px;
+}
+
+.enquiry-item {
+  background-color: #f5f5f5;
+  border-radius: 5px;
+  padding: 15px;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+  transition: box-shadow 0.5s ease-in-out;
+}
+
+.enquiry-item:hover {
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+}
+
+.enquiry-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.enquiry-email {
+  font-weight: bold;
+}
+
+.enquiry-status {
+  font-weight: bold;
+}
+
+.enquiry-message {
+  margin-bottom: 10px;
+}
+
+.enquiry-reply {
+  font-style: italic;
+}
+
+.replied {
+  color: green;
+}
+
+.not-replied {
+  color: red;
+}

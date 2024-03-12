@@ -2,27 +2,31 @@ import React, { useEffect, useState } from "react";
 import "/src/assets/Css/teacherPage.css";
 import emptyTableImage from "/src/assets/Images/instructorPageImgages/empty-table.jpg"; // Adjust the path to your image file
 import { useNavigate } from "react-router-dom";
+import { GetAllQuery } from "../../services/auth";
+import { setEmail } from "../../Redux/Slices/queryDataSlice";
+import { useDispatch } from "react-redux";
 const ExampleTable = () => {
+  const dispatch = useDispatch();
   const [enquiryData, setEnquiryData] = useState([]);
   const nav = useNavigate();
+
   useEffect(() => {
     fetchData();
   }, []);
 
   const fetchData = async () => {
     try {
-      const response = await fetch(
-        "http://127.0.0.1:8181/enquiry/getAllEnquiry"
-      );
-      const data = await response.json();
-      setEnquiryData(data);
-      console.table(data);
+      const response = await GetAllQuery();
+      setEnquiryData(response.data); // Remove the function call ()
+      // console.table(response.data);
     } catch (error) {
       console.error(error);
     }
   };
 
-  const handleReply = () => {
+  const handleReply = (email) => {
+    dispatch(setEmail(email)); // Dispatch action to update email in Redux state
+    // console.log(email);
     nav("/bec.com/user/QueryReply");
   };
 
@@ -49,15 +53,18 @@ const ExampleTable = () => {
             </tr>
           </thead>
           <tbody>
-            {enquiryData.map((item) => (
-              <tr key={item.id}>
-                <td>{item.id}</td>
+            {enquiryData.map((item, index) => (
+              <tr key={index + 1}>
+                <td>{index + 1}</td>
                 <td>{item.course_name}</td>
                 <td>{item.email}</td>
                 <td>{item.enquiry_type}</td>
                 <td>{item.message}</td>
                 <td style={{ padding: "0 30px" }}>
-                  <button className="query-reply" onClick={handleReply}>
+                  <button
+                    className="query-reply"
+                    onClick={() => handleReply(item.email)}
+                  >
                     Reply
                   </button>
                 </td>

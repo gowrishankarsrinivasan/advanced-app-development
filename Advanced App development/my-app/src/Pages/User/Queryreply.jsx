@@ -1,42 +1,29 @@
 import React, { useState } from "react";
 import "/src/assets/Css/Admincss/queryReply.css";
 import emailjs from "emailjs-com";
-import {to}
-
+import { toast, ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import { queryPost } from "../../services/auth";
+import { useSelector } from "react-redux";
+import { QueryReply } from "../../services/auth";
 const ReplyPage = () => {
   const [replyMessage, setReplyMessage] = useState("");
-
+  const email = useSelector((state) => state.email.value);
+  console.log(email);
   const handleSubmitReply = async (e) => {
     e.preventDefault();
-
-    const service_id = "service_2lopgme";
-    const template_id = "template_v2hm99i";
-    const public_id = "Q5pCEShRxFHCuXGE6";
-    const courseName = "Java";
-    const email = "22lecs013@skcet.ac.in";
-    const enquiryType = "complaint";
-    const message = "hi";
-
-    // Constructing the email content
-    const templateParams = {
-      to_email: email,
-      to_name: "to you",
-      from_name: "Shankar Bhai", // Change this to your name or the sender's name
-      courseName: courseName,
-      enquiryType: enquiryType,
-      message: message,
-      replyMessage: replyMessage,
+    const data = {
+      reply: replyMessage,
     };
-
-    // Sending email using emailjs
-    emailjs
-      .send(service_id, template_id, templateParams, public_id)
-      .then((response) => {
-        
-      })
-      .catch((error) => {
-        console.error("Error sending email:", error);
+    try {
+      QueryReply(email, data).then((res) => {
+        console.log(res.data);
+        setReplyMessage("");
+        toast.success("Message sent successfully");
       });
+    } catch (error) {
+      console.error(error);
+    }
   };
 
   return (
@@ -72,6 +59,7 @@ const ReplyPage = () => {
           </form>
         </div>
       </div>
+      <ToastContainer />
     </div>
   );
 };

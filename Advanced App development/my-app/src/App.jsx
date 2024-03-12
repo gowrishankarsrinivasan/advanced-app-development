@@ -23,6 +23,10 @@ const LazyDash = lazy(() => import("./Pages/Admin/dash"));
 // const LazyQueryReply = lazy(() => import("./Pages/instructor/instructor"));
 const lazyAdminCourseForm = lazy(() => import("./Pages/Admin/courseForm"));
 const LazyQueryReply = lazy(() => import("./Pages/User/Queryreply"));
+const LazyStatus = lazy(() => import("./Pages/User/StatusPage"));
+const lazyAdminCoursePage = lazy(() => import("./Pages/Admin/AdminCoursePage"));
+const lazyPayDetailsPage = lazy(() => import("./Pages/Admin/PaymentDisplay"));
+const lazyCourseEnrolled= lazy(()=> import("./Pages/Admin/CoursesEnrolled"));
 const UserRoutes = () => {
   return (
     <UserLayout>
@@ -50,6 +54,10 @@ const UserRoutes = () => {
             path="/QueryReply"
             element={<LazyLayout component={LazyQueryReply} />}
           />
+          <Route
+            path="/status"
+            element={<LazyLayout component={LazyStatus} />}
+          />
         </Routes>
       </Suspense>
     </UserLayout>
@@ -71,6 +79,18 @@ const AdminRoutes = () => {
           <Route
             path="/reply"
             element={<LazyLayout component={LazyQueryTable} />}
+          />
+          <Route
+            path="/adminCoursePage"
+            element={<LazyLayout component={lazyAdminCoursePage} />}
+          />
+          <Route
+            path="/adminPayDisplay"
+            element={<LazyLayout component={lazyPayDetailsPage} />}
+          />
+          <Route
+            path="/coursesEnrolled"
+            element={<LazyLayout component={lazyCourseEnrolled} />}
           />
         </Routes>
       </Suspense>

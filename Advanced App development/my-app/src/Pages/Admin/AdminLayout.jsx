@@ -1,6 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
-import Navbar from "../User/Navbar";
+import Navbar from "./AdminNavBar";
 import Footer from "../User/footer";
 const AdminLayout = ({ children }) => {
   return (
